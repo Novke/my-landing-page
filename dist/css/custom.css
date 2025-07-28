@@ -1,0 +1,69 @@
+/* Custom CSS pravila za promenu boja i veličine slika */
+
+/* Promena boja za primarna dugmad (uključujući i dugmad za skrolovanje) */
+.btn-primary {
+  --bs-btn-bg: #d63384; /* Roze pozadina */
+  --bs-btn-border-color: #d63384; /* Roze ivica */
+  --bs-btn-hover-bg: #c02d75; /* Tamnija roze za hover */
+  --bs-btn-hover-border-color: #c02d75; /* Tamnija roze ivica za hover */
+  --bs-btn-focus-shadow-rgb: 214, 51, 132; /* RGB vrednost za #d63384 za senku fokusa */
+  --bs-btn-active-bg: #c02d75; /* Tamnija roze za aktivno stanje */
+  --bs-btn-active-border-color: #c02d75; /* Tamnija roze ivica za aktivno stanje */
+}
+
+/* Promena pozadine navigacione trake i boje linkova pri hoveru kada se skroluje */
+#mainNav.navbar-shrink {
+  background-color: #d63384; /* Roze pozadina kada je navigacija skupljena */
+}
+
+#mainNav.navbar-shrink .navbar-brand:hover,
+#mainNav.navbar-shrink .nav-link:hover {
+  color: #d63384; /* Roze boja teksta linkova pri hoveru kada je navigacija skupljena */
+}
+
+/* Promena boja za "Scroll to Top" dugme */
+.scroll-to-top .btn {
+  background-color: #d63384; /* Roze pozadina */
+}
+
+.scroll-to-top .btn:hover {
+  background-color: #c02d75; /* Tamnija roze za hover */
+}
+
+/* Smanjenje veličine slika u EDUCATION sekciji */
+.education-item img {
+    width: 60%; /* Smanjuje širinu slike na 60% (40% manje) */
+    height: auto; /* Održava proporcije slike */
+    display: block; /* Omogućava centriranje slike */
+    margin-left: auto; /* Centriranje slike */
+    margin-right: auto; /* Centriranje slike */
+}
+
+/* Poravnanje teksta unutar EDUCATION sekcije */
+.education-item h4 {
+    /* Ovo osigurava da naslov ostaje centriran ako to želiš */
+    text-align: center;
+    /* Možeš dodati minimalnu visinu ako su neki naslovi mnogo kraći */
+    min-height: 2.5em; /* Prilagodi po potrebi */
+    display: flex; /* Koristi flexbox za vertikalno centriranje teksta unutar h4 */
+    align-items: center;
+    justify-content: center;
+}
+
+.education-item p.lead {
+    /* Datum - centrirano */
+    text-align: center;
+    min-height: 1.5em; /* Prilagodi po potrebi */
+}
+
+.education-item p:not(.lead):not(.mb-1) { /* Cilja sve p elemente osim lead i naslova nagrada */
+    text-align: left; /* Poravnaj tekst levo */
+    padding-left: 1rem; /* Dodaj malo uvlačenje, prilagodi po potrebi */
+    padding-right: 1rem; /* Dodaj malo desnog paddinga da ne ide do ivice */
+}
+
+/* Specifična pravila za nagrade (ako su se razlikovala) */
+.education-item p.mb-1,
+.education-item p.mb-0 {
+    text-align: left; /* Poravnaj tekst nagrada levo */
+}
