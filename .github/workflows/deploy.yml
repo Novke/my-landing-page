@@ -22,7 +22,7 @@ jobs:
 
       - name: Deploy code via SSH
         run: |
-          ssh -i ~/.ssh/id_ed25519 root@${{ secrets.SERVER_IP }} << 'EOF'
+          ssh -i ~/.ssh/github-actions-novica-website root@${{ secrets.SERVER_IP }} << 'EOF'
             cd /srv/sites/novica/my-landing-page
             git pull origin master
             systemctl reload nginx
