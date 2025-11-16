@@ -531,6 +531,8 @@
             transition: all 0.3s ease;
             opacity: 0;
             transform: translateY(20px);
+            display: flex;
+            flex-direction: column;
         }
 
         .project-card.visible {
@@ -565,6 +567,9 @@
 
         .project-content {
             padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
         }
 
         .project-title {
@@ -597,17 +602,45 @@
         .project-links {
             display: flex;
             gap: 1rem;
+            margin-top: auto;
+            padding-top: 1rem;
         }
 
         .project-link {
             color: var(--slate-400);
             text-decoration: none;
             font-size: 0.875rem;
-            transition: color 0.2s ease;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
-        .project-link:hover {
+        .project-link svg {
+            width: 18px;
+            height: 18px;
+            stroke: currentColor;
+        }
+
+        .project-link.code-link {
             color: var(--cyan-400);
+        }
+
+        .project-link.code-link:hover {
+            color: var(--cyan-500);
+            transform: translateX(3px);
+        }
+
+        .project-link.private-link {
+            color: var(--slate-400);
+            cursor: default;
+            pointer-events: none;
+        }
+
+        .project-link.nda-link {
+            color: #ef4444;
+            cursor: default;
+            pointer-events: none;
         }
 
         /* Contact Section */
@@ -1076,7 +1109,12 @@
                         <span class="project-tag">PostgreSQL</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/Novke" class="project-link">View on GitHub →</a>
+                        <a href="https://github.com/Novke" class="project-link code-link" target="_blank">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                            </svg>
+                            Code
+                        </a>
                     </div>
                 </div>
             </div>
@@ -1098,7 +1136,12 @@
                         <span class="project-tag">Kubernetes</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/Novke" class="project-link">View on GitHub →</a>
+                        <span class="project-link private-link">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                            </svg>
+                            Private
+                        </span>
                     </div>
                 </div>
             </div>
@@ -1120,7 +1163,12 @@
                         <span class="project-tag">AWS</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/Novke" class="project-link">View on GitHub →</a>
+                        <a href="https://github.com/Novke" class="project-link code-link" target="_blank">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                            </svg>
+                            Code
+                        </a>
                     </div>
                 </div>
             </div>
@@ -1142,7 +1190,12 @@
                         <span class="project-tag">Machine Learning</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/Novke" class="project-link">View on GitHub →</a>
+                        <span class="project-link nda-link">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                            </svg>
+                            NDA
+                        </span>
                     </div>
                 </div>
             </div>
@@ -1164,7 +1217,12 @@
                         <span class="project-tag">PostgreSQL</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/Novke" class="project-link">View on GitHub →</a>
+                        <span class="project-link private-link">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                            </svg>
+                            Private
+                        </span>
                     </div>
                 </div>
             </div>
@@ -1186,7 +1244,12 @@
                         <span class="project-tag">OpenAPI</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/Novke" class="project-link">View on GitHub →</a>
+                        <a href="https://github.com/Novke" class="project-link code-link" target="_blank">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                            </svg>
+                            Code
+                        </a>
                     </div>
                 </div>
             </div>
