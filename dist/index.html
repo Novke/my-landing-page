@@ -601,7 +601,8 @@
 
         .project-links {
             display: flex;
-            gap: 1rem;
+            flex-wrap: wrap;
+            gap: 0.75rem;
             margin-top: auto;
             padding-top: 1rem;
         }
@@ -609,17 +610,29 @@
         .project-link {
             color: var(--slate-400);
             text-decoration: none;
-            font-size: 0.875rem;
+            font-size: 0.8rem;
             transition: all 0.2s ease;
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.35rem;
         }
 
         .project-link svg {
-            width: 18px;
-            height: 18px;
+            width: 16px;
+            height: 16px;
             stroke: currentColor;
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 640px) {
+            .project-link {
+                font-size: 0.75rem;
+            }
+
+            .project-link svg {
+                width: 14px;
+                height: 14px;
+            }
         }
 
         .project-link.code-link {
@@ -1198,27 +1211,46 @@
 
             <div class="project-card reveal">
                 <div class="project-image" style="background: linear-gradient(135deg, rgba(147, 51, 234, 0.2), rgba(236, 72, 153, 0.2));">
-                    <span style="font-size: 4rem; opacity: 0.5;">🤖</span>
+                    <span style="font-size: 4rem; opacity: 0.5;">📊</span>
                 </div>
                 <div class="project-content">
-                    <h3 class="project-title">Artificial Intelligence</h3>
+                    <h3 class="project-title">Microservice Framework Comparative Analysis</h3>
                     <p class="project-description">
-                        AI projects and research. Currently investigating AI capabilities in microservice architecture
-                        for my PhD thesis, exploring intelligent system design.
+                        Master's thesis research implementing microservice architectures in Spring Boot, Micronaut, and Quarkus.
+                        Comprehensive comparison across performance metrics, documentation quality, and community support.
+                        Published scientific paper demonstrating microservice application in geodesy domain.
                     </p>
                     <div class="project-tags">
-                        <span class="project-tag">Python</span>
-                        <span class="project-tag">TensorFlow</span>
-                        <span class="project-tag">AI</span>
-                        <span class="project-tag">Machine Learning</span>
+                        <span class="project-tag">Research</span>
+                        <span class="project-tag">Spring Boot</span>
+                        <span class="project-tag">Micronaut</span>
+                        <span class="project-tag">Quarkus</span>
                     </div>
                     <div class="project-links">
-                        <span class="project-link nda-link">
+                        <a href="https://github.com/Novke/SpringMicroservices" class="project-link code-link" target="_blank">
                             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
                             </svg>
-                            NDA
-                        </span>
+                            Spring
+                        </a>
+                        <a href="https://github.com/Novke/MicronautMicroservices" class="project-link code-link" target="_blank">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                            </svg>
+                            Micronaut
+                        </a>
+                        <a href="https://github.com/Novke/QuarkusMicroservices" class="project-link code-link" target="_blank">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                            </svg>
+                            Quarkus
+                        </a>
+                        <a href="https://www.researchgate.net/publication/390076093_On_the_Applicability_of_Microservice_Architecture_in_Geodetic_Company" class="project-link website-link" target="_blank">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>
+                            </svg>
+                            Publication
+                        </a>
                     </div>
                 </div>
             </div>
@@ -1228,16 +1260,18 @@
                     <span style="font-size: 4rem; opacity: 0.5;">💻</span>
                 </div>
                 <div class="project-content">
-                    <h3 class="project-title">Full Stack Development</h3>
+                    <h3 class="project-title">trif.rs</h3>
                     <p class="project-description">
-                        Full stack applications combining Spring Boot backend with Angular frontend.
-                        Building complete solutions from database to user interface.
+                        Personal virtual machine with rented domain hosting deployed applications and websites.
+                        Self-managed infrastructure with SSH terminal access and custom CI/CD pipelines built for personal projects,
+                        including this portfolio website. If you see this, the VM is working!
                     </p>
                     <div class="project-tags">
-                        <span class="project-tag">Spring Boot</span>
-                        <span class="project-tag">Angular</span>
-                        <span class="project-tag">TypeScript</span>
-                        <span class="project-tag">PostgreSQL</span>
+                        <span class="project-tag">Server Administration</span>
+                        <span class="project-tag">SSH</span>
+                        <span class="project-tag">CI/CD</span>
+                        <span class="project-tag">Linux</span>
+                        <span class="project-tag">Hetzner</span>
                     </div>
                     <div class="project-links">
                         <span class="project-link private-link">
