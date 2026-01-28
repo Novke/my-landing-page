@@ -276,6 +276,18 @@
             margin-bottom: 1.5rem;
             box-shadow: 0 0 20px rgba(0, 212, 255, 0.03);
             transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .publication-year {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--neon-blue);
+            text-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+            opacity: 0.8;
         }
 
         .publication-card:hover {
@@ -516,7 +528,7 @@
                             <span class="achievement-tag">AI</span>
                             <span class="achievement-tag">Face Recognition</span>
                             <span class="achievement-tag">Computer Vision</span>
-                            <span class="achievement-tag">Startup Competition</span>
+                            <span class="achievement-tag">StartUp</span>
                         </div>
                     </div>
                 </div>
@@ -535,6 +547,7 @@
 
             <!-- Published Papers -->
             <div class="publication-card fade-in">
+                <span class="publication-year">2025</span>
                 <span class="publication-status status-published">Published</span>
                 <h3 class="publication-title">On the Applicability of Microservice Architecture in Geodetic Company</h3>
                 <p class="publication-authors"><strong>Novica Trifkovic</strong>, Ilija D. Antovic</p>
@@ -560,6 +573,7 @@
             </div>
 
             <div class="publication-card fade-in">
+                <span class="publication-year">2024</span>
                 <span class="publication-status status-published">Published</span>
                 <h3 class="publication-title">Influence of Weights on the Unknowns' Estimation in 1D Geodetic Networks</h3>
                 <p class="publication-authors">Zarko Nestorovic, <strong>Novica Trifkovic</strong></p>
