@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research & Publications - Novica Trifkovic</title>
+    <meta name="description" content="Academic publications and research achievements by Novica Trifkovic - Software Engineering, AI, Cloud Computing, and Geodesy.">
+    <meta name="author" content="Novica Trifkovic">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --black-pure: #000000;
+            --black-soft: #050508;
+            --black-card: #0a0a0f;
+            --gray-700: #1a1a1f;
+            --gray-600: #2a2a32;
+            --gray-500: #4a4a55;
+            --gray-400: #8a8a95;
+            --gray-300: #b0b0b8;
+            --gray-200: #d0d0d8;
+            --neon-blue: #00d4ff;
+            --neon-blue-dark: #00a8cc;
+            --neon-blue-bright: #00f0ff;
+            --neon-glow: 0 0 10px #00d4ff, 0 0 20px rgba(0, 212, 255, 0.5);
+            --neon-glow-strong: 0 0 15px #00d4ff, 0 0 30px rgba(0, 212, 255, 0.6), 0 0 45px rgba(0, 212, 255, 0.3);
+            --blue-500: #3b82f6;
+            --green-500: #22c55e;
+            --yellow-500: #eab308;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+                'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+                sans-serif;
+            background: linear-gradient(135deg, var(--black-pure) 0%, var(--black-soft) 50%, var(--black-pure) 100%);
+            color: var(--gray-300);
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            transition: all 0.3s ease;
+            padding: 1rem 0;
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(0, 212, 255, 0.3);
+        }
+
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--neon-blue);
+            transition: transform 0.3s ease;
+            text-decoration: none;
+            text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+            text-shadow: var(--neon-glow);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--gray-300);
+            text-decoration: none;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--neon-blue);
+            text-shadow: 0 0 8px rgba(0, 212, 255, 0.5);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--neon-blue);
+            box-shadow: 0 0 8px var(--neon-blue);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--neon-blue);
+            font-size: 1.5rem;
+            cursor: pointer;
+            text-shadow: 0 0 8px rgba(0, 212, 255, 0.5);
+        }
+
+        /* Page Hero */
+        .page-hero {
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 400px;
+            height: 400px;
+            background: rgba(0, 212, 255, 0.05);
+            border-radius: 50%;
+            filter: blur(80px);
+            pointer-events: none;
+        }
+
+        .page-title {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            color: white;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .page-subtitle {
+            color: var(--gray-400);
+            font-size: 1.25rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 4rem 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: white;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .section-title svg {
+            width: 32px;
+            height: 32px;
+            color: var(--neon-blue);
+            filter: drop-shadow(0 0 8px rgba(0, 212, 255, 0.6));
+        }
+
+        .section-subtitle {
+            color: var(--gray-400);
+            margin-bottom: 2rem;
+            font-size: 1rem;
+        }
+
+        /* Achievement Card */
+        .achievement-card {
+            background: rgba(10, 10, 15, 0.8);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-left: 3px solid var(--neon-blue);
+            border-radius: 0.5rem;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 0 30px rgba(0, 212, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .achievement-card:hover {
+            border-color: rgba(0, 212, 255, 0.4);
+            box-shadow: 0 0 40px rgba(0, 212, 255, 0.1);
+            transform: translateX(5px);
+        }
+
+        .achievement-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .achievement-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(0, 212, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .achievement-icon svg {
+            width: 32px;
+            height: 32px;
+            color: var(--neon-blue);
+            filter: drop-shadow(0 0 8px rgba(0, 212, 255, 0.6));
+        }
+
+        .achievement-info h3 {
+            color: white;
+            font-size: 1.25rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .achievement-meta {
+            color: var(--neon-blue);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .achievement-description {
+            color: var(--gray-400);
+            line-height: 1.6;
+        }
+
+        .achievement-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .achievement-tag {
+            background: rgba(0, 212, 255, 0.08);
+            color: var(--neon-blue);
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            border: 1px solid rgba(0, 212, 255, 0.15);
+        }
+
+        /* Publication Card */
+        .publication-card {
+            background: rgba(10, 10, 15, 0.8);
+            border: 1px solid rgba(0, 212, 255, 0.15);
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.03);
+            transition: all 0.3s ease;
+        }
+
+        .publication-card:hover {
+            border-color: rgba(0, 212, 255, 0.4);
+            box-shadow: 0 0 30px rgba(0, 212, 255, 0.08);
+        }
+
+        .publication-status {
+            display: inline-block;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.75rem;
+        }
+
+        .status-published {
+            background: rgba(34, 197, 94, 0.15);
+            color: var(--green-500);
+            border: 1px solid rgba(34, 197, 94, 0.3);
+        }
+
+        .status-pending {
+            background: rgba(234, 179, 8, 0.15);
+            color: var(--yellow-500);
+            border: 1px solid rgba(234, 179, 8, 0.3);
+        }
+
+        .publication-title {
+            color: white;
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+            line-height: 1.4;
+        }
+
+        .publication-authors {
+            color: var(--gray-400);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .publication-authors strong {
+            color: var(--neon-blue);
+        }
+
+        .publication-venue {
+            color: var(--gray-500);
+            font-size: 0.85rem;
+            font-style: italic;
+            margin-bottom: 0.75rem;
+        }
+
+        .publication-abstract {
+            color: var(--gray-400);
+            font-size: 0.875rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            padding-left: 1rem;
+            border-left: 2px solid rgba(0, 212, 255, 0.2);
+        }
+
+        .publication-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .publication-link {
+            color: var(--neon-blue);
+            text-decoration: none;
+            font-size: 0.85rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            transition: all 0.2s ease;
+        }
+
+        .publication-link:hover {
+            color: var(--neon-blue-bright);
+            text-shadow: 0 0 8px rgba(0, 212, 255, 0.5);
+        }
+
+        .publication-link svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        /* Back Link */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--gray-400);
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+            transition: all 0.2s ease;
+        }
+
+        .back-link:hover {
+            color: var(--neon-blue);
+        }
+
+        .back-link svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--gray-500);
+            border-top: 1px solid rgba(0, 212, 255, 0.15);
+            margin-top: 4rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .fade-in:nth-child(1) { animation-delay: 0.1s; }
+        .fade-in:nth-child(2) { animation-delay: 0.2s; }
+        .fade-in:nth-child(3) { animation-delay: 0.3s; }
+        .fade-in:nth-child(4) { animation-delay: 0.4s; }
+        .fade-in:nth-child(5) { animation-delay: 0.5s; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 4rem;
+                left: 0;
+                right: 0;
+                background: rgba(0, 0, 0, 0.95);
+                backdrop-filter: blur(16px);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1rem;
+                transform: translateY(-100%);
+                opacity: 0;
+                transition: all 0.3s ease;
+                border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+                z-index: 40;
+            }
+
+            .nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .achievement-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .page-hero {
+                padding: 7rem 1.5rem 3rem;
+            }
+
+            section {
+                padding: 3rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo"><span style="color: var(--neon-blue);">novica.trif</span><span style="color: white;">kovic</span></a>
+            <button class="menu-toggle" id="menuToggle">&#9776;</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#skills">Skills</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="publications.html" class="active">Research</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <div class="page-hero">
+        <h1 class="page-title">Research & Publications</h1>
+        <p class="page-subtitle">Academic contributions in Software Engineering, AI Systems, Cloud Computing, and Geodesy</p>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Achievements Section -->
+        <section>
+            <h2 class="section-title">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
+                </svg>
+                Achievements
+            </h2>
+            <p class="section-subtitle">Competition participation and recognition</p>
+
+            <div class="achievement-card fade-in">
+                <div class="achievement-header">
+                    <div class="achievement-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+                        </svg>
+                    </div>
+                    <div class="achievement-info">
+                        <h3>InnovNation Competition - Finalist</h3>
+                        <div class="achievement-meta">Science Technology Park Novi Sad | 2025</div>
+                        <p class="achievement-description">
+                            Participated in the InnovNation startup competition organized by the Science Technology Park.
+                            Our team <strong>Photoristic</strong> developed an AI-powered face recognition software solution
+                            and earned a finalist position along with a certificate of achievement.
+                        </p>
+                        <div class="achievement-tags">
+                            <span class="achievement-tag">AI</span>
+                            <span class="achievement-tag">Face Recognition</span>
+                            <span class="achievement-tag">Computer Vision</span>
+                            <span class="achievement-tag">Startup Competition</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Publications Section -->
+        <section>
+            <h2 class="section-title">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                </svg>
+                Publications
+            </h2>
+            <p class="section-subtitle">Peer-reviewed papers in international journals and conferences</p>
+
+            <!-- Published Papers -->
+            <div class="publication-card fade-in">
+                <span class="publication-status status-published">Published</span>
+                <h3 class="publication-title">On the Applicability of Microservice Architecture in Geodetic Company</h3>
+                <p class="publication-authors"><strong>Novica Trifkovic</strong>, Ilija D. Antovic</p>
+                <p class="publication-venue">2025 29th International Conference on Information Technology (IT), February 2025</p>
+                <p class="publication-abstract">
+                    This paper explores the practical application of microservice architecture patterns within geodetic companies,
+                    analyzing the benefits and challenges of transitioning from monolithic systems to distributed microservices.
+                </p>
+                <div class="publication-links">
+                    <a href="https://doi.org/10.1109/IT64745.2025.10930287" class="publication-link" target="_blank" rel="noopener">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                        </svg>
+                        DOI: 10.1109/IT64745.2025.10930287
+                    </a>
+                    <a href="https://www.researchgate.net/publication/390076093_On_the_Applicability_of_Microservice_Architecture_in_Geodetic_Company" class="publication-link" target="_blank" rel="noopener">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>
+                        </svg>
+                        ResearchGate
+                    </a>
+                </div>
+            </div>
+
+            <div class="publication-card fade-in">
+                <span class="publication-status status-published">Published</span>
+                <h3 class="publication-title">Influence of Weights on the Unknowns' Estimation in 1D Geodetic Networks</h3>
+                <p class="publication-authors">Zarko Nestorovic, <strong>Novica Trifkovic</strong></p>
+                <p class="publication-venue">Journal of Faculty of Civil Engineering, Vol. 46, 2024</p>
+                <p class="publication-abstract">
+                    This paper presents research results on the influence of weights on unknown parameters estimation.
+                    The research was conducted for classical Least Square estimation and generalized matrix inversion
+                    across six cases of 1D networks, demonstrating that weight variations have relatively small influences
+                    on the unknowns within the considered range.
+                </p>
+                <div class="publication-links">
+                    <a href="https://doi.org/10.14415/JFCE-911" class="publication-link" target="_blank" rel="noopener">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                        </svg>
+                        DOI: 10.14415/JFCE-911
+                    </a>
+                </div>
+            </div>
+
+            <!-- Pending Papers -->
+            <h3 style="color: var(--gray-300); margin: 3rem 0 1.5rem; font-size: 1.1rem; border-bottom: 1px solid rgba(0, 212, 255, 0.15); padding-bottom: 0.5rem;">Forthcoming / In Review</h3>
+
+            <div class="publication-card fade-in">
+                <span class="publication-status status-pending">Under Review</span>
+                <h3 class="publication-title">Towards Role-Based Multi-Agent LLM Systems for Software Requirements Analysis</h3>
+                <p class="publication-authors"><strong>Novica Trifkovic</strong> et al.</p>
+                <p class="publication-abstract">
+                    This research explores methodologies for orchestrating Large Language Models (LLMs) and Small Language Models (SLMs)
+                    as collaborative agents for automated software requirements gathering and analysis. The paper proposes a role-based
+                    multi-agent architecture where specialized agents handle different aspects of requirements elicitation,
+                    validation, and documentation.
+                </p>
+            </div>
+
+            <div class="publication-card fade-in">
+                <span class="publication-status status-pending">In Progress</span>
+                <h3 class="publication-title">Benchmarking Cloud Architectures: AWS, Azure, and GCP Performance Study</h3>
+                <p class="publication-authors"><strong>Novica Trifkovic</strong></p>
+                <p class="publication-abstract">
+                    A comprehensive comparative analysis of major cloud service providers (AWS, Azure, Google Cloud Platform)
+                    from a software development perspective. The study evaluates performance across different architecture types
+                    (VMs, containers, serverless) through systematic load testing scenarios, measuring latency, cold start times,
+                    auto-scaling behavior, and cost efficiency under various workload conditions.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Novica Trifkovic. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuToggle.innerHTML = navLinks.classList.contains('active') ? '&#10005;' : '&#9776;';
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuToggle.innerHTML = '&#9776;';
+            });
+        });
+    </script>
+</body>
+</html>
