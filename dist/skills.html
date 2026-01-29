@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills & Technologies - Novica Trifkovic</title>
+    <meta name="description" content="Technical skills and expertise of Novica Trifkovic - Backend Development, DevOps, Cloud, AI/ML, and more.">
+    <meta name="author" content="Novica Trifkovic">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --black-pure: #000000;
+            --black-soft: #050508;
+            --black-card: #0a0a0f;
+            --gray-700: #1a1a1f;
+            --gray-600: #2a2a32;
+            --gray-500: #4a4a55;
+            --gray-400: #8a8a95;
+            --gray-300: #b0b0b8;
+            --gray-200: #d0d0d8;
+            --neon-blue: #00d4ff;
+            --neon-blue-dark: #00a8cc;
+            --neon-blue-bright: #00f0ff;
+            --neon-glow: 0 0 10px #00d4ff, 0 0 20px rgba(0, 212, 255, 0.5);
+            --neon-glow-strong: 0 0 15px #00d4ff, 0 0 30px rgba(0, 212, 255, 0.6), 0 0 45px rgba(0, 212, 255, 0.3);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+                'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+                sans-serif;
+            background: linear-gradient(135deg, var(--black-pure) 0%, var(--black-soft) 50%, var(--black-pure) 100%);
+            color: var(--gray-300);
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            transition: all 0.3s ease;
+            padding: 1rem 0;
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(0, 212, 255, 0.3);
+        }
+
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--neon-blue);
+            transition: transform 0.3s ease;
+            text-decoration: none;
+            text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+            text-shadow: var(--neon-glow);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--gray-300);
+            text-decoration: none;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--neon-blue);
+            text-shadow: 0 0 8px rgba(0, 212, 255, 0.5);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--neon-blue);
+            box-shadow: 0 0 8px var(--neon-blue);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--neon-blue);
+            font-size: 1.5rem;
+            cursor: pointer;
+            text-shadow: 0 0 8px rgba(0, 212, 255, 0.5);
+        }
+
+        /* Page Hero */
+        .page-hero {
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 400px;
+            height: 400px;
+            background: rgba(0, 212, 255, 0.05);
+            border-radius: 50%;
+            filter: blur(80px);
+            pointer-events: none;
+        }
+
+        .page-title {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            color: white;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .page-subtitle {
+            color: var(--gray-400);
+            font-size: 1.25rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 3rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 1.75rem;
+            color: white;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .section-title svg {
+            width: 28px;
+            height: 28px;
+            color: var(--neon-blue);
+            filter: drop-shadow(0 0 8px rgba(0, 212, 255, 0.6));
+        }
+
+        /* Skill Category Card */
+        .skill-category {
+            background: rgba(10, 10, 15, 0.8);
+            border: 1px solid rgba(0, 212, 255, 0.15);
+            border-left: 3px solid var(--neon-blue);
+            border-radius: 0.5rem;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.03);
+            transition: all 0.3s ease;
+        }
+
+        .skill-category:hover {
+            border-color: rgba(0, 212, 255, 0.4);
+            box-shadow: 0 0 30px rgba(0, 212, 255, 0.08);
+        }
+
+        .skill-category h3 {
+            color: white;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .skill-category h3 svg {
+            width: 24px;
+            height: 24px;
+            color: var(--neon-blue);
+            filter: drop-shadow(0 0 6px rgba(0, 212, 255, 0.5));
+        }
+
+        .skill-category p {
+            color: var(--gray-400);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .skill-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .skill-item {
+            background: rgba(0, 212, 255, 0.05);
+            border: 1px solid rgba(0, 212, 255, 0.1);
+            border-radius: 0.5rem;
+            padding: 1rem;
+            transition: all 0.2s ease;
+        }
+
+        .skill-item:hover {
+            background: rgba(0, 212, 255, 0.1);
+            border-color: rgba(0, 212, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .skill-item-title {
+            color: var(--neon-blue);
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .skill-item-desc {
+            color: var(--gray-400);
+            font-size: 0.8rem;
+        }
+
+        /* Tech Tags */
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .tech-tag {
+            background: rgba(0, 212, 255, 0.08);
+            color: var(--neon-blue);
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            border: 1px solid rgba(0, 212, 255, 0.15);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--gray-500);
+            border-top: 1px solid rgba(0, 212, 255, 0.15);
+            margin-top: 4rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .fade-in:nth-child(1) { animation-delay: 0.1s; }
+        .fade-in:nth-child(2) { animation-delay: 0.2s; }
+        .fade-in:nth-child(3) { animation-delay: 0.3s; }
+        .fade-in:nth-child(4) { animation-delay: 0.4s; }
+        .fade-in:nth-child(5) { animation-delay: 0.5s; }
+        .fade-in:nth-child(6) { animation-delay: 0.6s; }
+        .fade-in:nth-child(7) { animation-delay: 0.7s; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 4rem;
+                left: 0;
+                right: 0;
+                background: rgba(0, 0, 0, 0.95);
+                backdrop-filter: blur(16px);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1rem;
+                transform: translateY(-100%);
+                opacity: 0;
+                transition: all 0.3s ease;
+                border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+                z-index: 40;
+            }
+
+            .nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .page-hero {
+                padding: 7rem 1.5rem 3rem;
+            }
+
+            section {
+                padding: 2rem 1.5rem;
+            }
+
+            .skill-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo"><span style="color: var(--neon-blue);">novica.trif</span><span style="color: white;">kovic</span></a>
+            <button class="menu-toggle" id="menuToggle">&#9776;</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="skills.html" class="active">Skills</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="publications.html">Research</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <div class="page-hero">
+        <h1 class="page-title">Skills & Technologies</h1>
+        <p class="page-subtitle">A comprehensive overview of my technical expertise and the tools I work with</p>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Backend Development -->
+        <section>
+            <div class="skill-category fade-in">
+                <h3>
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"/>
+                    </svg>
+                    Backend Development
+                </h3>
+                <p>Building robust, scalable server-side applications with modern Java frameworks and enterprise patterns.</p>
+                <div class="skill-grid">
+                    <div class="skill-item">
+                        <div class="skill-item-title">Spring Boot</div>
+                        <div class="skill-item-desc">Primary framework for enterprise applications</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-item-title">Spring Framework</div>
+                        <div class="skill-item-desc">Core, Security, Data, Cloud</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-item-title">Java</div>
+                        <div class="skill-item-desc">Java 8-21, modern features</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-item-title">REST API</div>
+                        <div class="skill-item-desc">RESTful services, OpenAPI/Swagger</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-item-title">Python</div>
+                        <div class="skill-item-desc">FastAPI, scripting, automation</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-item-title">Enterprise Systems</div>
+                        <div class="skill-item-desc">ERP, CRM, financial systems</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Microservices -->
+        <section>
+            <div class="skill-category fade-in">
+                <h3>
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"/>
+                    </svg>
+                    Microservices Architecture
+                </h3>
+                <p>Designing and implementing distributed systems with modern microservice patterns and tools.</p>
+                <div class="skill-grid">
+                    <div class="skill-item">
+                        <div class="skill-item-title">Spring Microservices</div>
+                        <div class="skill-item-desc">Cloud-native applications</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-item-title">API Gateway</div>
+                        <div class="skill-item-desc">Routing, load balancing</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-item-title">Service Discovery</div>
+                        <div class="skill-item-desc">Eureka, Consul</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-item-title">Kafka</div>
+                        <div class="skill-item-desc">Event streaming, async messaging</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-item-title">RabbitMQ</div>
+                        <div class="skill-item-desc">Message queuing</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-item-title">Micronaut & Quarkus</div>
+                        <div class="skill-item-desc">Alternative frameworks (research)</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DevOps & Cloud -->
+        <section>
+            <div class="skill-category fade-in">
+                <h3>
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/>
+                    </svg>
+                    DevOps & Cloud
+                </h3>
+                <p>Deploying and managing applications across cloud platforms with modern DevOps practices.</p>
+                <div class="skill-grid">
+                    <div class="skill-item">
+                        <div class="skill-item-title">Docker</div>
+                        <div class="skill-item-desc">Containerization, Docker Compose</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-item-title">Kubernetes</div>
+                        <div class="skill-item-desc">Container orchestration</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-item-title">AWS</div>
+                        <div class="skill-item-desc">EC2, Lambda, S3, RDS</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-item-title">Google Cloud</div>
+                        <div class="skill-item-desc">Cloud Run, Functions, Storage</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-item-title">CI/CD</div>
+                        <div class="skill-item-desc">GitHub Actions, Jenkins</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-item-title">Personal VM</div>
+                        <div class="skill-item-desc">Hetzner, self-managed infra</div>
+                    </div>
+                </div>
+                <div class="tech-tags">
+                    <span class="tech-tag">Linux</span>
+                    <span class="tech-tag">Nginx</span>
+                    <span class="tech-tag">SSH</span>
+                    <span class="tech-tag">Terraform</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Databases -->
+        <section>
+            <div class="skill-category fade-in">
+                <h3>
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"/>
+                    </svg>
+                    Databases
+                </h3>
+                <p>Working with relational and NoSQL databases, including vector databases for AI applications.</p>
+                <div class="skill-grid">
+                    <div class="skill-item">
+                        <div class="skill-item-title">PostgreSQL</div>
+                        <div class="skill-item-desc">Primary DB, JSON, full-text search</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-item-title">pgvector</div>
+                        <div class="skill-item-desc">Vector embeddings for AI/ML</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-item-title">MySQL / MariaDB</div>
+                        <div class="skill-item-desc">Classic relational databases</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-item-title">Oracle</div>
+                        <div class="skill-item-desc">Enterprise database systems</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-item-title">Redis</div>
+                        <div class="skill-item-desc">Caching, session storage</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-item-title">Migrations</div>
+                        <div class="skill-item-desc">Flyway, Liquibase</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI & Machine Learning -->
+        <section>
+            <div class="skill-category fade-in">
+                <h3>
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                    </svg>
+                    AI & Machine Learning
+                </h3>
+                <p>Integrating AI capabilities into applications, from LLM APIs to custom ML solutions.</p>
+                <div class="skill-grid">
+                    <div class="skill-item">
+                        <div class="skill-item-title">LLM Integration</div>
+                        <div class="skill-item-desc">OpenAI, Claude, Azure OpenAI</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-item-title">MCP</div>
+                        <div class="skill-item-desc">Model Context Protocol</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-item-title">Prompt Engineering</div>
+                        <div class="skill-item-desc">Effective AI interactions</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-item-title">Computer Vision</div>
+                        <div class="skill-item-desc">Image processing, recognition</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-item-title">ML Deployment</div>
+                        <div class="skill-item-desc">Model serving, inference</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-item-title">Claude Code</div>
+                        <div class="skill-item-desc">AI-assisted development</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Security & Architecture -->
+        <section>
+            <div class="skill-category fade-in">
+                <h3>
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                    </svg>
+                    Security & Architecture
+                </h3>
+                <p>Implementing secure authentication, authorization, and robust application architecture.</p>
+                <div class="skill-grid">
+                    <div class="skill-item">
+                        <div class="skill-item-title">JWT</div>
+                        <div class="skill-item-desc">Token-based authentication</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-item-title">OAuth 2.0</div>
+                        <div class="skill-item-desc">Third-party authentication</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-item-title">Spring Security</div>
+                        <div class="skill-item-desc">Enterprise security</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-item-title">SOLID Principles</div>
+                        <div class="skill-item-desc">Clean architecture</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testing -->
+        <section>
+            <div class="skill-category fade-in">
+                <h3>
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    Testing & Quality
+                </h3>
+                <p>Ensuring code quality through comprehensive testing strategies.</p>
+                <div class="skill-grid">
+                    <div class="skill-item">
+                        <div class="skill-item-title">JUnit 5</div>
+                        <div class="skill-item-desc">Unit testing framework</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-item-title">Mockito</div>
+                        <div class="skill-item-desc">Mocking framework</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-item-title">Integration Testing</div>
+                        <div class="skill-item-desc">End-to-end test scenarios</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-item-title">Test Automation</div>
+                        <div class="skill-item-desc">CI/CD integration</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Leadership & Innovation -->
+        <section>
+            <div class="skill-category fade-in">
+                <h3>
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                    </svg>
+                    Leadership & Innovation
+                </h3>
+                <p>Driving innovation and knowledge sharing within teams and organizations.</p>
+                <div class="skill-grid">
+                    <div class="skill-item">
+                        <div class="skill-item-title">Innovation Leader</div>
+                        <div class="skill-item-desc">Introducing new technologies at work</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-item-title">Knowledge Sharing</div>
+                        <div class="skill-item-desc">Mentoring, tech talks, documentation</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-item-title">Tech Evangelist</div>
+                        <div class="skill-item-desc">Keeping seniors updated with trends</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-item-title">Teaching Associate</div>
+                        <div class="skill-item-desc">University-level instruction</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Novica Trifkovic. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuToggle.innerHTML = navLinks.classList.contains('active') ? '&#10005;' : '&#9776;';
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuToggle.innerHTML = '&#9776;';
+            });
+        });
+    </script>
+</body>
+</html>

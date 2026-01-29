@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Novica Trifkovic</title>
+    <meta name="description" content="Portfolio of projects by Novica Trifkovic - Enterprise systems, AI applications, personal projects, and research.">
+    <meta name="author" content="Novica Trifkovic">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --black-pure: #000000;
+            --black-soft: #050508;
+            --black-card: #0a0a0f;
+            --gray-700: #1a1a1f;
+            --gray-600: #2a2a32;
+            --gray-500: #4a4a55;
+            --gray-400: #8a8a95;
+            --gray-300: #b0b0b8;
+            --gray-200: #d0d0d8;
+            --neon-blue: #00d4ff;
+            --neon-blue-dark: #00a8cc;
+            --neon-blue-bright: #00f0ff;
+            --neon-glow: 0 0 10px #00d4ff, 0 0 20px rgba(0, 212, 255, 0.5);
+            --blue-500: #3b82f6;
+            --green-500: #22c55e;
+            --purple-500: #a855f7;
+            --orange-500: #f97316;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+                'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+                sans-serif;
+            background: linear-gradient(135deg, var(--black-pure) 0%, var(--black-soft) 50%, var(--black-pure) 100%);
+            color: var(--gray-300);
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            transition: all 0.3s ease;
+            padding: 1rem 0;
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(0, 212, 255, 0.3);
+        }
+
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--neon-blue);
+            transition: transform 0.3s ease;
+            text-decoration: none;
+            text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+            text-shadow: var(--neon-glow);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--gray-300);
+            text-decoration: none;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--neon-blue);
+            text-shadow: 0 0 8px rgba(0, 212, 255, 0.5);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--neon-blue);
+            box-shadow: 0 0 8px var(--neon-blue);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--neon-blue);
+            font-size: 1.5rem;
+            cursor: pointer;
+            text-shadow: 0 0 8px rgba(0, 212, 255, 0.5);
+        }
+
+        /* Page Hero */
+        .page-hero {
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 400px;
+            height: 400px;
+            background: rgba(0, 212, 255, 0.05);
+            border-radius: 50%;
+            filter: blur(80px);
+            pointer-events: none;
+        }
+
+        .page-title {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            color: white;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .page-subtitle {
+            color: var(--gray-400);
+            font-size: 1.25rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 2rem 2rem 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--neon-blue);
+            margin-bottom: 2rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+        }
+
+        /* Project Card */
+        .project-card {
+            background: rgba(10, 10, 15, 0.8);
+            border: 1px solid rgba(0, 212, 255, 0.15);
+            border-radius: 0.75rem;
+            margin-bottom: 2rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.03);
+        }
+
+        .project-card:hover {
+            border-color: rgba(0, 212, 255, 0.4);
+            box-shadow: 0 0 30px rgba(0, 212, 255, 0.08);
+            transform: translateY(-3px);
+        }
+
+        .project-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 1.5rem;
+            border-bottom: 1px solid rgba(0, 212, 255, 0.1);
+        }
+
+        .project-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+
+        .project-header-info {
+            flex-grow: 1;
+        }
+
+        .project-title {
+            color: white;
+            font-size: 1.25rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .project-meta {
+            color: var(--gray-500);
+            font-size: 0.85rem;
+        }
+
+        .project-status {
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .status-production {
+            background: rgba(34, 197, 94, 0.15);
+            color: var(--green-500);
+            border: 1px solid rgba(34, 197, 94, 0.3);
+        }
+
+        .status-nda {
+            background: rgba(239, 68, 68, 0.15);
+            color: #ef4444;
+            border: 1px solid rgba(239, 68, 68, 0.3);
+        }
+
+        .status-research {
+            background: rgba(168, 85, 247, 0.15);
+            color: var(--purple-500);
+            border: 1px solid rgba(168, 85, 247, 0.3);
+        }
+
+        .status-personal {
+            background: rgba(0, 212, 255, 0.15);
+            color: var(--neon-blue);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+        }
+
+        .project-body {
+            padding: 1.5rem;
+        }
+
+        .project-description {
+            color: var(--gray-400);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-features {
+            margin-bottom: 1.5rem;
+        }
+
+        .project-features h4 {
+            color: var(--gray-300);
+            font-size: 0.9rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .feature-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 0.5rem;
+        }
+
+        .feature-list li {
+            color: var(--gray-400);
+            font-size: 0.85rem;
+            padding-left: 1.25rem;
+            position: relative;
+        }
+
+        .feature-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+            width: 6px;
+            height: 6px;
+            background: var(--neon-blue);
+            border-radius: 50%;
+            box-shadow: 0 0 6px rgba(0, 212, 255, 0.5);
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-tag {
+            background: rgba(0, 212, 255, 0.08);
+            color: var(--neon-blue);
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            border: 1px solid rgba(0, 212, 255, 0.15);
+        }
+
+        .project-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .project-link {
+            color: var(--neon-blue);
+            text-decoration: none;
+            font-size: 0.85rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            transition: all 0.2s ease;
+        }
+
+        .project-link:hover {
+            color: var(--neon-blue-bright);
+            text-shadow: 0 0 8px rgba(0, 212, 255, 0.5);
+        }
+
+        .project-link svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .project-link.disabled {
+            color: var(--gray-500);
+            cursor: default;
+            pointer-events: none;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--gray-500);
+            border-top: 1px solid rgba(0, 212, 255, 0.15);
+            margin-top: 2rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 4rem;
+                left: 0;
+                right: 0;
+                background: rgba(0, 0, 0, 0.95);
+                backdrop-filter: blur(16px);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1rem;
+                transform: translateY(-100%);
+                opacity: 0;
+                transition: all 0.3s ease;
+                border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+                z-index: 40;
+            }
+
+            .nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .page-hero {
+                padding: 7rem 1.5rem 3rem;
+            }
+
+            section {
+                padding: 1.5rem;
+            }
+
+            .project-header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .feature-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo"><span style="color: var(--neon-blue);">novica.trif</span><span style="color: white;">kovic</span></a>
+            <button class="menu-toggle" id="menuToggle">&#9776;</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
+                <li><a href="publications.html">Research</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <div class="page-hero">
+        <h1 class="page-title">Projects</h1>
+        <p class="page-subtitle">A collection of professional work, personal projects, and research endeavors</p>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Enterprise / Professional -->
+        <section>
+            <h2 class="section-title">Enterprise & Professional</h2>
+
+            <!-- IFMIS -->
+            <div class="project-card fade-in">
+                <div class="project-header" style="background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(0, 212, 255, 0.05));">
+                    <div class="project-icon" style="background: rgba(34, 197, 94, 0.1);">&#127963;</div>
+                    <div class="project-header-info">
+                        <h3 class="project-title">IFMIS - Integrated Financial Management System</h3>
+                        <p class="project-meta">Ministry of Finance | Enterprise Budget System</p>
+                    </div>
+                    <span class="project-status status-nda">NDA</span>
+                </div>
+                <div class="project-body">
+                    <p class="project-description">
+                        Enterprise-grade budget planning and execution system for the Ministry of Finance. Worked as part of a large team
+                        following Agile methodology with sprint-based development. Contributed to the full development lifecycle including
+                        backend architecture, database design, automated testing, containerization, and deployment processes.
+                    </p>
+                    <div class="project-features">
+                        <h4>Key Contributions</h4>
+                        <ul class="feature-list">
+                            <li>Backend service development</li>
+                            <li>Database architecture design</li>
+                            <li>Automated testing implementation</li>
+                            <li>Docker containerization</li>
+                            <li>CI/CD pipeline configuration</li>
+                            <li>Code review and mentoring</li>
+                        </ul>
+                    </div>
+                    <div class="project-tags">
+                        <span class="project-tag">Spring Boot</span>
+                        <span class="project-tag">Java</span>
+                        <span class="project-tag">PostgreSQL</span>
+                        <span class="project-tag">Docker</span>
+                        <span class="project-tag">Agile</span>
+                        <span class="project-tag">Enterprise</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CV Generator -->
+            <div class="project-card fade-in">
+                <div class="project-header" style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(168, 85, 247, 0.05));">
+                    <div class="project-icon" style="background: rgba(59, 130, 246, 0.1);">&#128196;</div>
+                    <div class="project-header-info">
+                        <h3 class="project-title">CV Generator</h3>
+                        <p class="project-meta">AI-Powered Resume Generation Platform</p>
+                    </div>
+                    <span class="project-status status-production">Production</span>
+                </div>
+                <div class="project-body">
+                    <p class="project-description">
+                        AI-powered system for automated CV generation based on candidate metadata and job requirements.
+                        Independently developed under expert supervision, currently in production and actively maintained.
+                        Used by HR professionals and recruiters for streamlined candidate presentation.
+                    </p>
+                    <div class="project-features">
+                        <h4>Key Features</h4>
+                        <ul class="feature-list">
+                            <li>AI-powered content generation</li>
+                            <li>Google Drive/Docs integration</li>
+                            <li>LaTeX PDF generation</li>
+                            <li>Chrome extension for data capture</li>
+                            <li>Angular frontend dashboard</li>
+                            <li>Serverless architecture</li>
+                        </ul>
+                    </div>
+                    <div class="project-tags">
+                        <span class="project-tag">FastAPI</span>
+                        <span class="project-tag">Python</span>
+                        <span class="project-tag">Google Cloud</span>
+                        <span class="project-tag">Cloud Run</span>
+                        <span class="project-tag">Angular</span>
+                        <span class="project-tag">OpenAI</span>
+                        <span class="project-tag">LaTeX</span>
+                    </div>
+                    <div class="project-links">
+                        <span class="project-link disabled">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                            </svg>
+                            NDA - Code not available
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DTO Generator -->
+            <div class="project-card fade-in">
+                <div class="project-header" style="background: linear-gradient(135deg, rgba(249, 115, 22, 0.1), rgba(234, 179, 8, 0.05));">
+                    <div class="project-icon" style="background: rgba(249, 115, 22, 0.1);">&#9881;</div>
+                    <div class="project-header-info">
+                        <h3 class="project-title">DTO Generator</h3>
+                        <p class="project-meta">Internal CLI Tool | Java Reflection</p>
+                    </div>
+                    <span class="project-status status-production">Internal Tool</span>
+                </div>
+                <div class="project-body">
+                    <p class="project-description">
+                        Custom CLI tool that generates DTO classes and REST endpoints from specially formatted markdown specification files.
+                        Built entirely with Java Reflection - <strong>pure logic, no AI</strong>. The tool parses markdown documents produced
+                        during the design phase and automatically generates boilerplate code, significantly accelerating development workflow.
+                    </p>
+                    <div class="project-features">
+                        <h4>Technical Highlights</h4>
+                        <ul class="feature-list">
+                            <li>Custom markdown parser</li>
+                            <li>Java Reflection for code generation</li>
+                            <li>Template-based output</li>
+                            <li>Endpoint scaffolding</li>
+                            <li>Validation rule generation</li>
+                            <li>Zero external AI dependencies</li>
+                        </ul>
+                    </div>
+                    <div class="project-tags">
+                        <span class="project-tag">Java</span>
+                        <span class="project-tag">Reflection API</span>
+                        <span class="project-tag">CLI</span>
+                        <span class="project-tag">Code Generation</span>
+                        <span class="project-tag">Developer Tools</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Personal / Freelance -->
+        <section>
+            <h2 class="section-title">Personal & Freelance</h2>
+
+            <!-- English Learning Chatbot -->
+            <div class="project-card fade-in">
+                <div class="project-header" style="background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(59, 130, 246, 0.05));">
+                    <div class="project-icon" style="background: rgba(0, 212, 255, 0.1);">&#128172;</div>
+                    <div class="project-header-info">
+                        <h3 class="project-title">English Learning Chatbot</h3>
+                        <p class="project-meta">AI Conversational Learning Platform</p>
+                    </div>
+                    <span class="project-status status-personal">Freelance</span>
+                </div>
+                <div class="project-body">
+                    <p class="project-description">
+                        An intelligent chatbot for learning English through natural conversation. The system analyzes user responses
+                        in real-time, identifies grammatical errors and areas for improvement, and generates personalized quizzes
+                        based on mistakes - similar to Duolingo's adaptive learning approach. Features real-time voice interaction
+                        with text-to-speech synthesis.
+                    </p>
+                    <div class="project-features">
+                        <h4>Key Features</h4>
+                        <ul class="feature-list">
+                            <li>WebSocket real-time communication</li>
+                            <li>ChatGPT integration for conversation</li>
+                            <li>Azure TTS for voice synthesis</li>
+                            <li>Error detection and tracking</li>
+                            <li>Adaptive quiz generation</li>
+                            <li>Progress analytics</li>
+                        </ul>
+                    </div>
+                    <div class="project-tags">
+                        <span class="project-tag">WebSocket</span>
+                        <span class="project-tag">ChatGPT API</span>
+                        <span class="project-tag">Azure TTS</span>
+                        <span class="project-tag">Python</span>
+                        <span class="project-tag">NLP</span>
+                        <span class="project-tag">EdTech</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- trif.rs -->
+            <div class="project-card fade-in">
+                <div class="project-header" style="background: linear-gradient(135deg, rgba(249, 115, 22, 0.1), rgba(234, 179, 8, 0.05));">
+                    <div class="project-icon" style="background: rgba(249, 115, 22, 0.1);">&#128187;</div>
+                    <div class="project-header-info">
+                        <h3 class="project-title">trif.rs</h3>
+                        <p class="project-meta">Personal Infrastructure | Self-Managed VM</p>
+                    </div>
+                    <span class="project-status status-production">Live</span>
+                </div>
+                <div class="project-body">
+                    <p class="project-description">
+                        Personal virtual machine with rented domain hosting deployed applications and websites.
+                        Self-managed infrastructure with SSH terminal access and custom CI/CD pipelines for personal projects.
+                        If you see this portfolio - the VM is working!
+                    </p>
+                    <div class="project-features">
+                        <h4>Infrastructure</h4>
+                        <ul class="feature-list">
+                            <li>Hetzner Cloud VM</li>
+                            <li>Custom CI/CD pipelines</li>
+                            <li>Nginx reverse proxy</li>
+                            <li>SSL/TLS certificates</li>
+                            <li>Multiple subdomain hosting</li>
+                            <li>Automated deployments</li>
+                        </ul>
+                    </div>
+                    <div class="project-tags">
+                        <span class="project-tag">Linux</span>
+                        <span class="project-tag">Nginx</span>
+                        <span class="project-tag">SSH</span>
+                        <span class="project-tag">CI/CD</span>
+                        <span class="project-tag">Hetzner</span>
+                        <span class="project-tag">DevOps</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Panorama Beska -->
+            <div class="project-card fade-in">
+                <div class="project-header" style="background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(59, 130, 246, 0.05));">
+                    <div class="project-icon" style="background: rgba(0, 212, 255, 0.1);">&#127969;</div>
+                    <div class="project-header-info">
+                        <h3 class="project-title">Panorama Beska</h3>
+                        <p class="project-meta">Vacation Rental Website</p>
+                    </div>
+                    <span class="project-status status-production">Live</span>
+                </div>
+                <div class="project-body">
+                    <p class="project-description">
+                        Frontend application for a vacation rental property. Features responsive design,
+                        image gallery, contact integration, and SEO optimization. Deployed with custom domain configuration
+                        on personal VM infrastructure.
+                    </p>
+                    <div class="project-tags">
+                        <span class="project-tag">HTML</span>
+                        <span class="project-tag">CSS</span>
+                        <span class="project-tag">JavaScript</span>
+                        <span class="project-tag">Responsive Design</span>
+                        <span class="project-tag">SEO</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Novke/GFSSystem" class="project-link" target="_blank">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                            </svg>
+                            View Code
+                        </a>
+                        <a href="https://beska.trif.rs" class="project-link" target="_blank">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>
+                            </svg>
+                            Visit Website
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GFS System -->
+            <div class="project-card fade-in">
+                <div class="project-header" style="background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(0, 212, 255, 0.05));">
+                    <div class="project-icon" style="background: rgba(34, 197, 94, 0.1);">&#127891;</div>
+                    <div class="project-header-info">
+                        <h3 class="project-title">GFS System</h3>
+                        <p class="project-meta">Teaching Assistant Management System</p>
+                    </div>
+                    <span class="project-status status-personal">Personal</span>
+                </div>
+                <div class="project-body">
+                    <p class="project-description">
+                        Full Stack system developed to support teaching and student performance tracking,
+                        assisting with grading and academic records management at the Faculty of Civil Engineering.
+                    </p>
+                    <div class="project-tags">
+                        <span class="project-tag">Spring Boot</span>
+                        <span class="project-tag">Angular</span>
+                        <span class="project-tag">MySQL</span>
+                        <span class="project-tag">Full Stack</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Novke/GFSSystem" class="project-link" target="_blank">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                            </svg>
+                            View Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Research / Academic -->
+        <section>
+            <h2 class="section-title">Research & Academic</h2>
+
+            <!-- Microservice Framework Analysis -->
+            <div class="project-card fade-in">
+                <div class="project-header" style="background: linear-gradient(135deg, rgba(168, 85, 247, 0.1), rgba(236, 72, 153, 0.05));">
+                    <div class="project-icon" style="background: rgba(168, 85, 247, 0.1);">&#128202;</div>
+                    <div class="project-header-info">
+                        <h3 class="project-title">Microservice Framework Comparative Analysis</h3>
+                        <p class="project-meta">Master's Thesis Research</p>
+                    </div>
+                    <span class="project-status status-research">Published</span>
+                </div>
+                <div class="project-body">
+                    <p class="project-description">
+                        Master's thesis research implementing identical microservice architectures in Spring Boot, Micronaut, and Quarkus.
+                        Comprehensive comparison across performance metrics, documentation quality, community support, and developer experience.
+                        Results published as a scientific paper demonstrating microservice application in geodesy domain.
+                    </p>
+                    <div class="project-features">
+                        <h4>Research Scope</h4>
+                        <ul class="feature-list">
+                            <li>Three framework implementations</li>
+                            <li>Performance benchmarking</li>
+                            <li>Memory usage analysis</li>
+                            <li>Startup time comparison</li>
+                            <li>Developer experience evaluation</li>
+                            <li>Real-world geodesy use case</li>
+                        </ul>
+                    </div>
+                    <div class="project-tags">
+                        <span class="project-tag">Spring Boot</span>
+                        <span class="project-tag">Micronaut</span>
+                        <span class="project-tag">Quarkus</span>
+                        <span class="project-tag">Research</span>
+                        <span class="project-tag">Microservices</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Novke/SpringMicroservices" class="project-link" target="_blank">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                            </svg>
+                            Spring
+                        </a>
+                        <a href="https://github.com/Novke/MicronautMicroservices" class="project-link" target="_blank">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                            </svg>
+                            Micronaut
+                        </a>
+                        <a href="https://github.com/Novke/QuarkusMicroservices" class="project-link" target="_blank">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                            </svg>
+                            Quarkus
+                        </a>
+                        <a href="https://www.researchgate.net/publication/390076093_On_the_Applicability_of_Microservice_Architecture_in_Geodetic_Company" class="project-link" target="_blank">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>
+                            </svg>
+                            Publication
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SAGA Internship -->
+            <div class="project-card fade-in">
+                <div class="project-header" style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(0, 212, 255, 0.05));">
+                    <div class="project-icon" style="background: rgba(59, 130, 246, 0.1);">&#128218;</div>
+                    <div class="project-header-info">
+                        <h3 class="project-title">SAGA Spring Boot Internship</h3>
+                        <p class="project-meta">Professional Training Program</p>
+                    </div>
+                    <span class="project-status status-research">Training</span>
+                </div>
+                <div class="project-body">
+                    <p class="project-description">
+                        Completed intensive Spring Boot internship program at SAGA, focusing on backend development
+                        fundamentals, enterprise patterns, and professional software development practices.
+                    </p>
+                    <div class="project-tags">
+                        <span class="project-tag">Spring Boot</span>
+                        <span class="project-tag">Java</span>
+                        <span class="project-tag">Backend</span>
+                        <span class="project-tag">Training</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Novica Trifkovic. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuToggle.innerHTML = navLinks.classList.contains('active') ? '&#10005;' : '&#9776;';
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuToggle.innerHTML = '&#9776;';
+            });
+        });
+    </script>
+</body>
+</html>
