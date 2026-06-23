@@ -260,6 +260,18 @@
             border: 1px solid rgba(0, 212, 255, 0.3);
         }
 
+        .status-startup {
+            background: rgba(234, 179, 8, 0.15);
+            color: #eab308;
+            border: 1px solid rgba(234, 179, 8, 0.3);
+        }
+
+        .status-live {
+            background: rgba(34, 197, 94, 0.15);
+            color: var(--green-500);
+            border: 1px solid rgba(34, 197, 94, 0.3);
+        }
+
         .project-body {
             padding: 1.5rem;
         }
@@ -452,6 +464,95 @@
 
     <!-- Main Content -->
     <main>
+        <!-- Startup & Entrepreneurship -->
+        <section>
+            <h2 class="section-title">Startup & Entrepreneurship</h2>
+
+            <!-- Sila -->
+            <div class="project-card fade-in">
+                <div class="project-header" style="background: linear-gradient(135deg, rgba(234, 179, 8, 0.1), rgba(0, 212, 255, 0.05));">
+                    <div class="project-icon" style="background: rgba(234, 179, 8, 0.1);">&#10024;</div>
+                    <div class="project-header-info">
+                        <h3 class="project-title">Sila &mdash; Co-Founder &amp; CTO</h3>
+                        <p class="project-meta">AI for Luxury Retail | Face-Recognition VIP Experience</p>
+                    </div>
+                    <span class="project-status status-startup">CTO</span>
+                </div>
+                <div class="project-body">
+                    <p class="project-description">
+                        B2B SaaS bringing a face-recognition-driven VIP experience to luxury retail. As co-founder and CTO I own the
+                        backend and the entire face-recognition pipeline. The MVP recognizes a VIP customer at the door in
+                        <strong>under 200 ms</strong> and instantly pushes their full profile to a store associate's phone &mdash;
+                        built on a consent-first, GDPR-compliant architecture that stores only mathematical embeddings, never images.
+                    </p>
+                    <div class="project-features">
+                        <h4>Key Contributions</h4>
+                        <ul class="feature-list">
+                            <li>RetinaFace + ArcFace on the InsightFace stack</li>
+                            <li>Python REST API recognition backend</li>
+                            <li>pgvector / PostgreSQL embedding search</li>
+                            <li>React Native store-associate app</li>
+                            <li>GDPR &amp; BIPA privacy-by-design</li>
+                            <li>Planned AWS G4dn (T4 GPU) deployment</li>
+                        </ul>
+                    </div>
+                    <div class="project-tags">
+                        <span class="project-tag">AI / Face Recognition</span>
+                        <span class="project-tag">Python</span>
+                        <span class="project-tag">InsightFace</span>
+                        <span class="project-tag">pgvector</span>
+                        <span class="project-tag">React Native</span>
+                        <span class="project-tag">AWS GPU</span>
+                        <span class="project-tag">Leadership</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://bysila.ai" class="project-link" target="_blank" rel="noopener">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>
+                            </svg>
+                            bysila.ai
+                        </a>
+                        <span class="project-link disabled" style="color: #eab308;">
+                            &#127942; POPRI International &mdash; 1st place
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Photoristic -->
+            <div class="project-card fade-in">
+                <div class="project-header" style="background: linear-gradient(135deg, rgba(168, 85, 247, 0.1), rgba(236, 72, 153, 0.05));">
+                    <div class="project-icon" style="background: rgba(168, 85, 247, 0.1);">&#128247;</div>
+                    <div class="project-header-info">
+                        <h3 class="project-title">Photoristic</h3>
+                        <p class="project-meta">Real-Time AI Event &amp; Wedding Photography</p>
+                    </div>
+                    <span class="project-status status-startup">Concept</span>
+                </div>
+                <div class="project-body">
+                    <p class="project-description">
+                        Face-recognition software for weddings and large events: a guest scans a QR code, takes a selfie, and every
+                        photo they appear in is delivered to their private gallery in real time while the event is still running, with
+                        AI auto-enhancing image quality. Like Sila, it is embedding-only (stores vectors, not faces) for full GDPR
+                        compliance &mdash; the differentiator versus PhotoDay and Waldo Photos. Recognized at the Science Technology
+                        Park Belgrade innovation competition.
+                    </p>
+                    <div class="project-tags">
+                        <span class="project-tag">AI / Face Recognition</span>
+                        <span class="project-tag">Embeddings</span>
+                        <span class="project-tag">GDPR by Design</span>
+                        <span class="project-tag">Product Validation</span>
+                        <span class="project-tag">Real-Time</span>
+                    </div>
+                    <div class="project-links">
+                        <span class="project-link disabled" style="color: var(--purple-500);">
+                            &#127942; Innovation Competition (STP Belgrade) &mdash; 8th place, 2025
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Enterprise / Professional -->
         <section>
             <h2 class="section-title">Enterprise & Professional</h2>
@@ -468,28 +569,32 @@
                 </div>
                 <div class="project-body">
                     <p class="project-description">
-                        Enterprise-grade budget planning and execution system for the Ministry of Finance. Worked as part of a large team
-                        following Agile methodology with sprint-based development. Contributed to the full development lifecycle including
-                        backend architecture, database design, automated testing, containerization, and deployment processes.
+                        Enterprise-grade budget planning and execution system for the Ministry of Finance, built with Saga / Yotta.
+                        Worked as part of a large team following Agile methodology with sprint-based development, contributing across the
+                        full lifecycle: backend architecture, database design, automated testing, containerization, and deployment.
+                        Also delivered sibling enterprise modules on the same stack and standards &mdash; asset inventory, warehouse,
+                        and vehicle-fleet systems &mdash; and helped modernize the company's internal Java training to Java 21 + Spring Boot 4.
                     </p>
                     <div class="project-features">
                         <h4>Key Contributions</h4>
                         <ul class="feature-list">
-                            <li>Backend service development</li>
-                            <li>Database architecture design</li>
-                            <li>Automated testing implementation</li>
+                            <li>Backend service development (Java 17/21)</li>
+                            <li>Database architecture (MS SQL Server)</li>
+                            <li>Automated testing &amp; live maintenance</li>
                             <li>Docker containerization</li>
-                            <li>CI/CD pipeline configuration</li>
+                            <li>CI/CD, staging &amp; observability</li>
                             <li>Code review and mentoring</li>
                         </ul>
                     </div>
                     <div class="project-tags">
                         <span class="project-tag">Spring Boot</span>
-                        <span class="project-tag">Java</span>
-                        <span class="project-tag">PostgreSQL</span>
+                        <span class="project-tag">Java 21</span>
+                        <span class="project-tag">Spring Security / JWT</span>
+                        <span class="project-tag">MS SQL Server</span>
+                        <span class="project-tag">MapStruct</span>
+                        <span class="project-tag">Flyway</span>
                         <span class="project-tag">Docker</span>
                         <span class="project-tag">Agile</span>
-                        <span class="project-tag">Enterprise</span>
                     </div>
                 </div>
             </div>
@@ -500,7 +605,7 @@
                     <div class="project-icon" style="background: rgba(59, 130, 246, 0.1);">&#128196;</div>
                     <div class="project-header-info">
                         <h3 class="project-title">CV Generator</h3>
-                        <p class="project-meta">AI-Powered Resume Generation Platform</p>
+                        <p class="project-meta">Xenon Seven | AI-Powered Resume Generation Platform</p>
                     </div>
                     <span class="project-status status-production">Production</span>
                 </div>
@@ -541,13 +646,63 @@
                 </div>
             </div>
 
+            <!-- Candidate Management Platform -->
+            <div class="project-card fade-in">
+                <div class="project-header" style="background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(168, 85, 247, 0.05));">
+                    <div class="project-icon" style="background: rgba(0, 212, 255, 0.1);">&#129302;</div>
+                    <div class="project-header-info">
+                        <h3 class="project-title">Candidate Management Platform</h3>
+                        <p class="project-meta">Gramian Consultancy | Recruiting-Tech, Production</p>
+                    </div>
+                    <span class="project-status status-production">Production</span>
+                </div>
+                <div class="project-body">
+                    <p class="project-description">
+                        End-to-end ownership of a live recruiting platform used by paying clients (Spring Boot 3.5 / Java 21 backend,
+                        Angular frontend). It deeply integrates the Workable ATS, runs scheduled sync "agents" that ingest all candidates
+                        and jobs in batches, verifies and enriches LinkedIn data through a multi-vendor strategy with adaptive throttling,
+                        and powers semantic skill search via a Neo4j knowledge graph kept alongside MySQL (polyglot persistence). Clients
+                        access their own data through a dedicated, API-key-secured public API.
+                    </p>
+                    <div class="project-features">
+                        <h4>Highlights</h4>
+                        <ul class="feature-list">
+                            <li>Workable integration via Spring Cloud OpenFeign</li>
+                            <li>Scheduled batch sync agents (Spring Scheduler)</li>
+                            <li>HMAC-verified async webhooks</li>
+                            <li>Neo4j skill knowledge graph + AI expansion</li>
+                            <li>Per-client API keys &amp; OpenAPI docs</li>
+                            <li>CI/CD test&rarr;build&rarr;deploy, Loki/Grafana observability</li>
+                        </ul>
+                    </div>
+                    <div class="project-tags">
+                        <span class="project-tag">Spring Boot</span>
+                        <span class="project-tag">Java 21</span>
+                        <span class="project-tag">OpenFeign</span>
+                        <span class="project-tag">Neo4j</span>
+                        <span class="project-tag">MySQL</span>
+                        <span class="project-tag">Angular</span>
+                        <span class="project-tag">Nginx</span>
+                        <span class="project-tag">Observability</span>
+                    </div>
+                    <div class="project-links">
+                        <span class="project-link disabled">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                            </svg>
+                            Private &mdash; client platform
+                        </span>
+                    </div>
+                </div>
+            </div>
+
             <!-- DTO Generator -->
             <div class="project-card fade-in">
                 <div class="project-header" style="background: linear-gradient(135deg, rgba(249, 115, 22, 0.1), rgba(234, 179, 8, 0.05));">
                     <div class="project-icon" style="background: rgba(249, 115, 22, 0.1);">&#9881;</div>
                     <div class="project-header-info">
                         <h3 class="project-title">DTO Generator</h3>
-                        <p class="project-meta">Internal CLI Tool | Java Reflection</p>
+                        <p class="project-meta">GiveSense | Internal CLI Tool, Java Reflection</p>
                     </div>
                     <span class="project-status status-production">Internal Tool</span>
                 </div>
@@ -581,42 +736,42 @@
 
         <!-- Personal / Freelance -->
         <section>
-            <h2 class="section-title">Personal & Freelance</h2>
+            <h2 class="section-title">Personal, Infrastructure & Indie</h2>
 
             <!-- English Learning Chatbot -->
             <div class="project-card fade-in">
                 <div class="project-header" style="background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(59, 130, 246, 0.05));">
                     <div class="project-icon" style="background: rgba(0, 212, 255, 0.1);">&#128172;</div>
                     <div class="project-header-info">
-                        <h3 class="project-title">English Learning Chatbot</h3>
-                        <p class="project-meta">AI Conversational Learning Platform</p>
+                        <h3 class="project-title">Bright English &mdash; Quiz Engine</h3>
+                        <p class="project-meta">Conversational AI Chatbot for an EdTech SaaS</p>
                     </div>
-                    <span class="project-status status-personal">Freelance</span>
+                    <span class="project-status status-personal">Client Work</span>
                 </div>
                 <div class="project-body">
                     <p class="project-description">
-                        An intelligent chatbot for learning English through natural conversation. The system analyzes user responses
-                        in real-time, identifies grammatical errors and areas for improvement, and generates personalized quizzes
-                        based on mistakes - similar to Duolingo's adaptive learning approach. Features real-time voice interaction
-                        with text-to-speech synthesis.
+                        Built and maintained a conversational AI chatbot for Bright English, an established Duolingo-style platform for
+                        learning English, adapting and extending it to the client's needs. A FastAPI backend exposes both REST and
+                        WebSocket endpoints for text and audio streaming, with text-to-speech that supports barge-in (the user can
+                        interrupt) and latency reporting, JWT auth, and a layered architecture that explicitly follows SOLID.
                     </p>
                     <div class="project-features">
                         <h4>Key Features</h4>
                         <ul class="feature-list">
-                            <li>WebSocket real-time communication</li>
-                            <li>ChatGPT integration for conversation</li>
-                            <li>Azure TTS for voice synthesis</li>
-                            <li>Error detection and tracking</li>
-                            <li>Adaptive quiz generation</li>
-                            <li>Progress analytics</li>
+                            <li>FastAPI REST + WebSocket endpoints</li>
+                            <li>Real-time text &amp; audio streaming</li>
+                            <li>TTS with barge-in &amp; latency reporting</li>
+                            <li>JWT authentication</li>
+                            <li>SOLID layered architecture</li>
+                            <li>pytest test suite, dockerized</li>
                         </ul>
                     </div>
                     <div class="project-tags">
-                        <span class="project-tag">WebSocket</span>
-                        <span class="project-tag">ChatGPT API</span>
-                        <span class="project-tag">Azure TTS</span>
+                        <span class="project-tag">FastAPI</span>
+                        <span class="project-tag">WebSockets</span>
                         <span class="project-tag">Python</span>
-                        <span class="project-tag">NLP</span>
+                        <span class="project-tag">OpenAI</span>
+                        <span class="project-tag">Real-Time Audio</span>
                         <span class="project-tag">EdTech</span>
                     </div>
                 </div>
@@ -684,12 +839,6 @@
                         <span class="project-tag">SEO</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/Novke/GFSSystem" class="project-link" target="_blank">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
-                            </svg>
-                            View Code
-                        </a>
                         <a href="https://beska.trif.rs" class="project-link" target="_blank">
                             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>
@@ -731,11 +880,185 @@
                     </div>
                 </div>
             </div>
+
+            <!-- GitGud -->
+            <div class="project-card fade-in">
+                <div class="project-header" style="background: linear-gradient(135deg, rgba(168, 85, 247, 0.1), rgba(0, 212, 255, 0.05));">
+                    <div class="project-icon" style="background: rgba(168, 85, 247, 0.1);">&#127918;</div>
+                    <div class="project-header-info">
+                        <h3 class="project-title">GitGud</h3>
+                        <p class="project-meta">Cross-Platform Desktop Git Client (Tauri)</p>
+                    </div>
+                    <span class="project-status status-live">Live</span>
+                </div>
+                <div class="project-body">
+                    <p class="project-description">
+                        A standalone desktop Git GUI built with Tauri (Rust + web frontend) to replace the VSCode Git panel and the
+                        terminal &mdash; including a workflow for committing and pushing from a phone. It ships with full release
+                        engineering: a GitHub Actions build matrix for Windows and Linux, automatic version patching, GitHub Releases
+                        with <code>latest.json</code> generation, SCP deploy behind Nginx, and one-line installers with SHA256 verification.
+                    </p>
+                    <div class="project-tags">
+                        <span class="project-tag">Tauri</span>
+                        <span class="project-tag">Rust</span>
+                        <span class="project-tag">TypeScript</span>
+                        <span class="project-tag">Tailwind</span>
+                        <span class="project-tag">GitHub Actions</span>
+                        <span class="project-tag">Release Automation</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Novke/GitGud" class="project-link" target="_blank">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                            </svg>
+                            View Code
+                        </a>
+                        <a href="https://gitgud.trif.rs" class="project-link" target="_blank">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>
+                            </svg>
+                            Download
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- eSign Lightweight -->
+            <div class="project-card fade-in">
+                <div class="project-header" style="background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(0, 212, 255, 0.05));">
+                    <div class="project-icon" style="background: rgba(34, 197, 94, 0.1);">&#9997;</div>
+                    <div class="project-header-info">
+                        <h3 class="project-title">eSign Lightweight</h3>
+                        <p class="project-meta">PDF E-Signature Web App</p>
+                    </div>
+                    <span class="project-status status-personal">Personal</span>
+                </div>
+                <div class="project-body">
+                    <p class="project-description">
+                        A lightweight PDF e-signing tool: upload and preview PDFs, draw a customizable signature, position/drag/resize
+                        the overlay on any page, and download the signed document, with automatic temp-file cleanup. A small, focused
+                        full-stack app pairing a Go standard-library backend with a Svelte + Vite frontend.
+                    </p>
+                    <div class="project-tags">
+                        <span class="project-tag">Go</span>
+                        <span class="project-tag">Svelte</span>
+                        <span class="project-tag">Vite</span>
+                        <span class="project-tag">MySQL</span>
+                        <span class="project-tag">pdfcpu</span>
+                        <span class="project-tag">Docker</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 7jun -->
+            <div class="project-card fade-in">
+                <div class="project-header" style="background: linear-gradient(135deg, rgba(236, 72, 153, 0.1), rgba(249, 115, 22, 0.05));">
+                    <div class="project-icon" style="background: rgba(236, 72, 153, 0.1);">&#127881;</div>
+                    <div class="project-header-info">
+                        <h3 class="project-title">7jun &mdash; Party Software</h3>
+                        <p class="project-meta">Phone-Friendly Event Apps Monorepo</p>
+                    </div>
+                    <span class="project-status status-personal">Personal</span>
+                </div>
+                <div class="project-body">
+                    <p class="project-description">
+                        A collection of small, independent, phone-friendly web apps for organizing an event &mdash; a DJ song-wishlist
+                        tool with admin curation and one-click audio download, and a guest survey (drinks, food, transport/carpool, song
+                        wishes) with an admin purchase- and carpool-planning dashboard. Each app is deployed as its own process on a
+                        subdomain behind Nginx, with systemd units and per-app deploy scripts.
+                    </p>
+                    <div class="project-tags">
+                        <span class="project-tag">Node.js</span>
+                        <span class="project-tag">Fastify</span>
+                        <span class="project-tag">React</span>
+                        <span class="project-tag">Vite + Tailwind</span>
+                        <span class="project-tag">systemd</span>
+                        <span class="project-tag">Nginx</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GeoManager / GeoReader -->
+            <div class="project-card fade-in">
+                <div class="project-header" style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(34, 197, 94, 0.05));">
+                    <div class="project-icon" style="background: rgba(59, 130, 246, 0.1);">&#128176;</div>
+                    <div class="project-header-info">
+                        <h3 class="project-title">GeoManager &amp; GeoReader</h3>
+                        <p class="project-meta">Geoput d.o.o. | Financial / Transaction Software</p>
+                    </div>
+                    <span class="project-status status-production">Production</span>
+                </div>
+                <div class="project-body">
+                    <p class="project-description">
+                        Solo-developed financial software for a construction company. GeoManager (Spring Boot + Angular) manages financial
+                        transactions, reads XML files, and exports reports to Excel via Apache POI &mdash; 1000+ commits to beta/production.
+                        Its companion GeoReader reads bank statements, handles contracts and a cashbook, generates browser-based reports for
+                        non-technical staff, and ships as a runnable JAR with a local server and an in-app bug-reporting flow.
+                    </p>
+                    <div class="project-tags">
+                        <span class="project-tag">Spring Boot</span>
+                        <span class="project-tag">Angular</span>
+                        <span class="project-tag">MySQL</span>
+                        <span class="project-tag">JAXB / XML</span>
+                        <span class="project-tag">Apache POI</span>
+                        <span class="project-tag">Solo Ownership</span>
+                    </div>
+                </div>
+            </div>
+
         </section>
 
         <!-- Research / Academic -->
         <section>
             <h2 class="section-title">Research & Academic</h2>
+
+            <!-- Cloud Provider Benchmark -->
+            <div class="project-card fade-in">
+                <div class="project-header" style="background: linear-gradient(135deg, rgba(168, 85, 247, 0.1), rgba(0, 212, 255, 0.05));">
+                    <div class="project-icon" style="background: rgba(168, 85, 247, 0.1);">&#9729;</div>
+                    <div class="project-header-info">
+                        <h3 class="project-title">Cloud Provider Benchmark</h3>
+                        <p class="project-meta">PhD Research | Multi-Cloud IaaS / CaaS / FaaS Study</p>
+                    </div>
+                    <span class="project-status status-research">In Progress</span>
+                </div>
+                <div class="project-body">
+                    <p class="project-description">
+                        An empirical, statistically-defensible comparison of AWS, Azure, Google Cloud, and Hetzner across three
+                        architectural layers &mdash; IaaS, CaaS, and FaaS &mdash; using one identical FastAPI application deployed to ten
+                        targets. The platform underpins an in-progress PhD paper: a fully automated 14-day measurement campaign on a
+                        neutral test client, analyzed with non-parametric statistics. It even caught a critical confound before launch
+                        (the storage benchmark was timing SDK client setup, not storage) and cut p95 latency by up to 156x.
+                    </p>
+                    <div class="project-features">
+                        <h4>Methodology &amp; Findings</h4>
+                        <ul class="feature-list">
+                            <li>10 deployment targets, identical Docker image</li>
+                            <li>Neutral DigitalOcean test client (no bias)</li>
+                            <li>systemd timers &rarr; DuckDB &rarr; stats</li>
+                            <li>Mann-Whitney U, Kruskal-Wallis, bootstrap CIs</li>
+                            <li>Cold-start spans ~16x across providers</li>
+                            <li>N &asymp; 28&ndash;31 measurements per cell</li>
+                        </ul>
+                    </div>
+                    <div class="project-tags">
+                        <span class="project-tag">AWS / Azure / GCP / Hetzner</span>
+                        <span class="project-tag">FastAPI</span>
+                        <span class="project-tag">Docker</span>
+                        <span class="project-tag">k6</span>
+                        <span class="project-tag">DuckDB</span>
+                        <span class="project-tag">Statistics</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Novke/cloud-provider-benchmark" class="project-link" target="_blank">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                            </svg>
+                            View Code
+                        </a>
+                    </div>
+                </div>
+            </div>
 
             <!-- Microservice Framework Analysis -->
             <div class="project-card fade-in">
@@ -800,6 +1123,63 @@
                 </div>
             </div>
 
+            <!-- Geosoft -->
+            <div class="project-card fade-in">
+                <div class="project-header" style="background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(168, 85, 247, 0.05));">
+                    <div class="project-icon" style="background: rgba(34, 197, 94, 0.1);">&#128208;</div>
+                    <div class="project-header-info">
+                        <h3 class="project-title">Geosoft &mdash; Geodetic Adjustment</h3>
+                        <p class="project-meta">Patented Software | 1D/2D Least-Squares</p>
+                    </div>
+                    <span class="project-status status-production">Patented</span>
+                </div>
+                <div class="project-body">
+                    <p class="project-description">
+                        Patented software for Geosoft d.o.o., developed with professors from the Faculty of Civil Engineering in Subotica,
+                        that performs 1D and 2D least-squares adjustment of survey measurements &mdash; replacing legacy Excel + VBA
+                        templates. I reverse-engineered the original VBA algorithm, wrote a full specification, then implemented a Python
+                        (NumPy) core behind FastAPI, proving correctness with golden-file tests against real solved projects
+                        (17/17 passing, including an 85-point / 301-measurement dataset, to 6-decimal tolerance).
+                    </p>
+                    <div class="project-tags">
+                        <span class="project-tag">Python</span>
+                        <span class="project-tag">NumPy / SciPy</span>
+                        <span class="project-tag">FastAPI</span>
+                        <span class="project-tag">Least-Squares</span>
+                        <span class="project-tag">Golden-File Testing</span>
+                        <span class="project-tag">Geodesy</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GeosoftAgenti -->
+            <div class="project-card fade-in">
+                <div class="project-header" style="background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(234, 179, 8, 0.05));">
+                    <div class="project-icon" style="background: rgba(0, 212, 255, 0.1);">&#128196;</div>
+                    <div class="project-header-info">
+                        <h3 class="project-title">GeosoftAgenti</h3>
+                        <p class="project-meta">Dual-Extraction OCR Pipeline (Handwritten Cyrillic &rarr; CSV)</p>
+                    </div>
+                    <span class="project-status status-research">AI Pipeline</span>
+                </div>
+                <div class="project-body">
+                    <p class="project-description">
+                        A pipeline that converts scanned cadastral/geodetic PDFs &mdash; largely handwritten Serbian Cyrillic &mdash; into
+                        clean CSV using two independent extractors (Claude and Google Gemini) from different model families to avoid
+                        correlated errors. The results are compared cell-by-cell; disagreements are routed to a human-review UI, and
+                        document-internal checksums (group sums, JMBG control digit) act as model-independent validators.
+                    </p>
+                    <div class="project-tags">
+                        <span class="project-tag">Python</span>
+                        <span class="project-tag">Claude / Claude Code</span>
+                        <span class="project-tag">Gemini API</span>
+                        <span class="project-tag">OCR</span>
+                        <span class="project-tag">Human-in-the-Loop</span>
+                        <span class="project-tag">pytest</span>
+                    </div>
+                </div>
+            </div>
+
             <!-- SAGA Internship -->
             <div class="project-card fade-in">
                 <div class="project-header" style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(0, 212, 255, 0.05));">
@@ -828,7 +1208,7 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Novica Trifkovic. All rights reserved.</p>
+        <p>&copy; 2026 Novica Trifkovic. All rights reserved.</p>
     </footer>
 
     <script>
