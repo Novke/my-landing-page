@@ -7,6 +7,11 @@
     <meta name="description" content="Technical skills and expertise of Novica Trifkovic - Backend Development, DevOps, Cloud, AI/ML, and more.">
     <meta name="author" content="Novica Trifkovic">
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23722f37'/%3E%3Ctext x='32' y='46' font-family='Georgia, serif' font-size='38' font-weight='bold' font-style='italic' fill='%23e7be74' text-anchor='middle'%3EN%3C/text%3E%3C/svg%3E">
+    <meta name="theme-color" content="#171012">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -15,30 +20,44 @@
         }
 
         :root {
-            --black-pure: #000000;
-            --black-soft: #050508;
-            --black-card: #0a0a0f;
-            --gray-700: #1a1a1f;
-            --gray-600: #2a2a32;
-            --gray-500: #4a4a55;
-            --gray-400: #8a8a95;
-            --gray-300: #b0b0b8;
-            --gray-200: #d0d0d8;
-            --neon-blue: #00d4ff;
-            --neon-blue-dark: #00a8cc;
-            --neon-blue-bright: #00f0ff;
-            --neon-glow: 0 0 10px #00d4ff, 0 0 20px rgba(0, 212, 255, 0.5);
-            --neon-glow-strong: 0 0 15px #00d4ff, 0 0 30px rgba(0, 212, 255, 0.6), 0 0 45px rgba(0, 212, 255, 0.3);
+            --ink: #171012;
+            --ink-soft: #1f1517;
+            --ink-card: #241a1c;
+            --gray-700: #2c2124;
+            --gray-600: #3c2e31;
+            --gray-500: #7a6a64;
+            --gray-400: #a3948c;
+            --gray-300: #cbbdb3;
+            --gray-200: #e2d8cd;
+            --ivory: #f4ece1;
+            --bordeaux: #722f37;
+            --bordeaux-bright: #8e3d47;
+            --bordeaux-deep: #4c1f26;
+            --gold: #d4a24e;
+            --gold-bright: #e7be74;
+            --rose: #c98a94;
+            --glow: 0 0 10px rgba(212, 162, 78, 0.35), 0 0 20px rgba(212, 162, 78, 0.2);
+            --glow-strong: 0 0 14px rgba(212, 162, 78, 0.45), 0 0 28px rgba(212, 162, 78, 0.25);
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-                'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-                sans-serif;
-            background: linear-gradient(135deg, var(--black-pure) 0%, var(--black-soft) 50%, var(--black-pure) 100%);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+                'Helvetica Neue', sans-serif;
+            background: linear-gradient(135deg, var(--ink) 0%, var(--ink-soft) 50%, var(--ink) 100%);
             color: var(--gray-300);
             overflow-x: hidden;
             min-height: 100vh;
+        }
+
+        .page-title,
+        .section-title,
+        .skill-category h3,
+        .logo {
+            font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+        }
+
+        .logo {
+            font-weight: 600;
         }
 
         /* Navigation */
@@ -50,9 +69,9 @@
             z-index: 50;
             transition: all 0.3s ease;
             padding: 1rem 0;
-            background: rgba(0, 0, 0, 0.9);
+            background: rgba(20, 13, 15, 0.92);
             backdrop-filter: blur(16px);
-            border-bottom: 1px solid rgba(0, 212, 255, 0.3);
+            border-bottom: 1px solid rgba(212, 162, 78, 0.3);
         }
 
         .nav-container {
@@ -67,15 +86,15 @@
         .logo {
             font-size: 1.5rem;
             font-weight: bold;
-            color: var(--neon-blue);
+            color: var(--gold);
             transition: transform 0.3s ease;
             text-decoration: none;
-            text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+            text-shadow: 0 0 10px rgba(212, 162, 78, 0.5);
         }
 
         .logo:hover {
             transform: scale(1.05);
-            text-shadow: var(--neon-glow);
+            text-shadow: var(--glow);
         }
 
         .nav-links {
@@ -93,8 +112,8 @@
 
         .nav-links a:hover,
         .nav-links a.active {
-            color: var(--neon-blue);
-            text-shadow: 0 0 8px rgba(0, 212, 255, 0.5);
+            color: var(--gold);
+            text-shadow: 0 0 8px rgba(212, 162, 78, 0.5);
         }
 
         .nav-links a::after {
@@ -104,8 +123,8 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: var(--neon-blue);
-            box-shadow: 0 0 8px var(--neon-blue);
+            background: var(--gold);
+            box-shadow: 0 0 8px var(--gold);
             transition: width 0.3s ease;
         }
 
@@ -118,10 +137,10 @@
             display: none;
             background: none;
             border: none;
-            color: var(--neon-blue);
+            color: var(--gold);
             font-size: 1.5rem;
             cursor: pointer;
-            text-shadow: 0 0 8px rgba(0, 212, 255, 0.5);
+            text-shadow: 0 0 8px rgba(212, 162, 78, 0.5);
         }
 
         /* Page Hero */
@@ -139,7 +158,7 @@
             transform: translateX(-50%);
             width: 400px;
             height: 400px;
-            background: rgba(0, 212, 255, 0.05);
+            background: rgba(212, 162, 78, 0.05);
             border-radius: 50%;
             filter: blur(80px);
             pointer-events: none;
@@ -147,7 +166,8 @@
 
         .page-title {
             font-size: clamp(2.5rem, 6vw, 4rem);
-            color: white;
+            font-weight: 550;
+            color: var(--ivory);
             margin-bottom: 1rem;
             position: relative;
         }
@@ -168,7 +188,7 @@
 
         .section-title {
             font-size: 1.75rem;
-            color: white;
+            color: var(--ivory);
             margin-bottom: 1.5rem;
             display: flex;
             align-items: center;
@@ -178,29 +198,29 @@
         .section-title svg {
             width: 28px;
             height: 28px;
-            color: var(--neon-blue);
-            filter: drop-shadow(0 0 8px rgba(0, 212, 255, 0.6));
+            color: var(--gold);
+            filter: drop-shadow(0 0 8px rgba(212, 162, 78, 0.35));
         }
 
         /* Skill Category Card */
         .skill-category {
-            background: rgba(10, 10, 15, 0.8);
-            border: 1px solid rgba(0, 212, 255, 0.15);
-            border-left: 3px solid var(--neon-blue);
+            background: rgba(34, 24, 26, 0.75);
+            border: 1px solid rgba(212, 162, 78, 0.15);
+            border-left: 3px solid var(--bordeaux-bright);
             border-radius: 0.5rem;
             padding: 2rem;
             margin-bottom: 2rem;
-            box-shadow: 0 0 20px rgba(0, 212, 255, 0.03);
+            box-shadow: 0 0 20px rgba(212, 162, 78, 0.03);
             transition: all 0.3s ease;
         }
 
         .skill-category:hover {
-            border-color: rgba(0, 212, 255, 0.4);
-            box-shadow: 0 0 30px rgba(0, 212, 255, 0.08);
+            border-color: rgba(212, 162, 78, 0.4);
+            box-shadow: 0 0 30px rgba(212, 162, 78, 0.08);
         }
 
         .skill-category h3 {
-            color: white;
+            color: var(--ivory);
             font-size: 1.25rem;
             margin-bottom: 1rem;
             display: flex;
@@ -211,8 +231,8 @@
         .skill-category h3 svg {
             width: 24px;
             height: 24px;
-            color: var(--neon-blue);
-            filter: drop-shadow(0 0 6px rgba(0, 212, 255, 0.5));
+            color: var(--gold);
+            filter: drop-shadow(0 0 6px rgba(212, 162, 78, 0.5));
         }
 
         .skill-category p {
@@ -228,21 +248,21 @@
         }
 
         .skill-item {
-            background: rgba(0, 212, 255, 0.05);
-            border: 1px solid rgba(0, 212, 255, 0.1);
+            background: rgba(212, 162, 78, 0.05);
+            border: 1px solid rgba(212, 162, 78, 0.1);
             border-radius: 0.5rem;
             padding: 1rem;
             transition: all 0.2s ease;
         }
 
         .skill-item:hover {
-            background: rgba(0, 212, 255, 0.1);
-            border-color: rgba(0, 212, 255, 0.3);
+            background: rgba(212, 162, 78, 0.1);
+            border-color: rgba(212, 162, 78, 0.3);
             transform: translateY(-2px);
         }
 
         .skill-item-title {
-            color: var(--neon-blue);
+            color: var(--gold);
             font-weight: 600;
             margin-bottom: 0.25rem;
         }
@@ -261,12 +281,12 @@
         }
 
         .tech-tag {
-            background: rgba(0, 212, 255, 0.08);
-            color: var(--neon-blue);
+            background: rgba(212, 162, 78, 0.08);
+            color: var(--gold);
             padding: 0.25rem 0.75rem;
             border-radius: 9999px;
             font-size: 0.75rem;
-            border: 1px solid rgba(0, 212, 255, 0.15);
+            border: 1px solid rgba(212, 162, 78, 0.15);
         }
 
         /* Footer */
@@ -274,7 +294,7 @@
             text-align: center;
             padding: 2rem;
             color: var(--gray-500);
-            border-top: 1px solid rgba(0, 212, 255, 0.15);
+            border-top: 1px solid rgba(212, 162, 78, 0.15);
             margin-top: 4rem;
         }
 
@@ -310,7 +330,7 @@
                 top: 4rem;
                 left: 0;
                 right: 0;
-                background: rgba(0, 0, 0, 0.95);
+                background: rgba(20, 13, 15, 0.96);
                 backdrop-filter: blur(16px);
                 flex-direction: column;
                 padding: 2rem;
@@ -318,7 +338,7 @@
                 transform: translateY(-100%);
                 opacity: 0;
                 transition: all 0.3s ease;
-                border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+                border-bottom: 1px solid rgba(212, 162, 78, 0.2);
                 z-index: 40;
             }
 
@@ -343,13 +363,23 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-delay: 0s !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
     </style>
 </head>
 <body>
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <a href="index.html" class="logo"><span style="color: var(--neon-blue);">novica.trif</span><span style="color: white;">kovic</span></a>
+            <a href="index.html" class="logo"><span style="color: var(--gold);">novica.trif</span><span style="color: var(--ivory);">kovic</span></a>
             <button class="menu-toggle" id="menuToggle">&#9776;</button>
             <ul class="nav-links" id="navLinks">
                 <li><a href="index.html">Home</a></li>
@@ -465,7 +495,7 @@
                     </svg>
                     DevOps & Cloud
                 </h3>
-                <p>Deploying applications across all four major clouds and all three deployment paradigms &mdash; IaaS, containers, and serverless &mdash; with self-built CI/CD and full observability.</p>
+                <p>Deploying applications across all four major clouds and all three deployment paradigms (IaaS, containers, and serverless), with self-built CI/CD and full observability.</p>
                 <div class="skill-grid">
                     <div class="skill-item">
                         <div class="skill-item-title">Multi-Cloud</div>
@@ -733,7 +763,7 @@
                     </svg>
                     Frontend
                 </h3>
-                <p>Building responsive interfaces and cross-platform apps to complement the backend work &mdash; full-stack when needed.</p>
+                <p>Building responsive interfaces and cross-platform apps to complement the backend work, full-stack when needed.</p>
                 <div class="skill-grid">
                     <div class="skill-item">
                         <div class="skill-item-title">Angular</div>

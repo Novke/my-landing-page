@@ -7,6 +7,11 @@
     <meta name="description" content="Portfolio of projects by Novica Trifkovic - Enterprise systems, AI applications, personal projects, and research.">
     <meta name="author" content="Novica Trifkovic">
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23722f37'/%3E%3Ctext x='32' y='46' font-family='Georgia, serif' font-size='38' font-weight='bold' font-style='italic' fill='%23e7be74' text-anchor='middle'%3EN%3C/text%3E%3C/svg%3E">
+    <meta name="theme-color" content="#171012">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -15,33 +20,44 @@
         }
 
         :root {
-            --black-pure: #000000;
-            --black-soft: #050508;
-            --black-card: #0a0a0f;
-            --gray-700: #1a1a1f;
-            --gray-600: #2a2a32;
-            --gray-500: #4a4a55;
-            --gray-400: #8a8a95;
-            --gray-300: #b0b0b8;
-            --gray-200: #d0d0d8;
-            --neon-blue: #00d4ff;
-            --neon-blue-dark: #00a8cc;
-            --neon-blue-bright: #00f0ff;
-            --neon-glow: 0 0 10px #00d4ff, 0 0 20px rgba(0, 212, 255, 0.5);
-            --blue-500: #3b82f6;
-            --green-500: #22c55e;
-            --purple-500: #a855f7;
-            --orange-500: #f97316;
+            --ink: #171012;
+            --ink-soft: #1f1517;
+            --ink-card: #241a1c;
+            --gray-700: #2c2124;
+            --gray-600: #3c2e31;
+            --gray-500: #7a6a64;
+            --gray-400: #a3948c;
+            --gray-300: #cbbdb3;
+            --gray-200: #e2d8cd;
+            --ivory: #f4ece1;
+            --bordeaux: #722f37;
+            --bordeaux-bright: #8e3d47;
+            --bordeaux-deep: #4c1f26;
+            --gold: #d4a24e;
+            --gold-bright: #e7be74;
+            --rose: #c98a94;
+            --glow: 0 0 10px rgba(212, 162, 78, 0.35), 0 0 20px rgba(212, 162, 78, 0.2);
+            --glow-strong: 0 0 14px rgba(212, 162, 78, 0.45), 0 0 28px rgba(212, 162, 78, 0.25);
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-                'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-                sans-serif;
-            background: linear-gradient(135deg, var(--black-pure) 0%, var(--black-soft) 50%, var(--black-pure) 100%);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+                'Helvetica Neue', sans-serif;
+            background: linear-gradient(135deg, var(--ink) 0%, var(--ink-soft) 50%, var(--ink) 100%);
             color: var(--gray-300);
             overflow-x: hidden;
             min-height: 100vh;
+        }
+
+        .page-title,
+        .section-title,
+        .project-title,
+        .logo {
+            font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+        }
+
+        .logo {
+            font-weight: 600;
         }
 
         /* Navigation */
@@ -53,9 +69,9 @@
             z-index: 50;
             transition: all 0.3s ease;
             padding: 1rem 0;
-            background: rgba(0, 0, 0, 0.9);
+            background: rgba(20, 13, 15, 0.92);
             backdrop-filter: blur(16px);
-            border-bottom: 1px solid rgba(0, 212, 255, 0.3);
+            border-bottom: 1px solid rgba(212, 162, 78, 0.3);
         }
 
         .nav-container {
@@ -70,15 +86,15 @@
         .logo {
             font-size: 1.5rem;
             font-weight: bold;
-            color: var(--neon-blue);
+            color: var(--gold);
             transition: transform 0.3s ease;
             text-decoration: none;
-            text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+            text-shadow: 0 0 10px rgba(212, 162, 78, 0.5);
         }
 
         .logo:hover {
             transform: scale(1.05);
-            text-shadow: var(--neon-glow);
+            text-shadow: var(--glow);
         }
 
         .nav-links {
@@ -96,8 +112,8 @@
 
         .nav-links a:hover,
         .nav-links a.active {
-            color: var(--neon-blue);
-            text-shadow: 0 0 8px rgba(0, 212, 255, 0.5);
+            color: var(--gold);
+            text-shadow: 0 0 8px rgba(212, 162, 78, 0.5);
         }
 
         .nav-links a::after {
@@ -107,8 +123,8 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: var(--neon-blue);
-            box-shadow: 0 0 8px var(--neon-blue);
+            background: var(--gold);
+            box-shadow: 0 0 8px var(--gold);
             transition: width 0.3s ease;
         }
 
@@ -121,10 +137,10 @@
             display: none;
             background: none;
             border: none;
-            color: var(--neon-blue);
+            color: var(--gold);
             font-size: 1.5rem;
             cursor: pointer;
-            text-shadow: 0 0 8px rgba(0, 212, 255, 0.5);
+            text-shadow: 0 0 8px rgba(212, 162, 78, 0.5);
         }
 
         /* Page Hero */
@@ -142,7 +158,7 @@
             transform: translateX(-50%);
             width: 400px;
             height: 400px;
-            background: rgba(0, 212, 255, 0.05);
+            background: rgba(212, 162, 78, 0.05);
             border-radius: 50%;
             filter: blur(80px);
             pointer-events: none;
@@ -150,7 +166,8 @@
 
         .page-title {
             font-size: clamp(2.5rem, 6vw, 4rem);
-            color: white;
+            font-weight: 550;
+            color: var(--ivory);
             margin-bottom: 1rem;
             position: relative;
         }
@@ -171,26 +188,26 @@
 
         .section-title {
             font-size: 1.5rem;
-            color: var(--neon-blue);
+            color: var(--gold);
             margin-bottom: 2rem;
             padding-bottom: 0.5rem;
-            border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+            border-bottom: 1px solid rgba(212, 162, 78, 0.2);
         }
 
         /* Project Card */
         .project-card {
-            background: rgba(10, 10, 15, 0.8);
-            border: 1px solid rgba(0, 212, 255, 0.15);
+            background: rgba(34, 24, 26, 0.75);
+            border: 1px solid rgba(212, 162, 78, 0.15);
             border-radius: 0.75rem;
             margin-bottom: 2rem;
             overflow: hidden;
             transition: all 0.3s ease;
-            box-shadow: 0 0 20px rgba(0, 212, 255, 0.03);
+            box-shadow: 0 0 20px rgba(212, 162, 78, 0.03);
         }
 
         .project-card:hover {
-            border-color: rgba(0, 212, 255, 0.4);
-            box-shadow: 0 0 30px rgba(0, 212, 255, 0.08);
+            border-color: rgba(212, 162, 78, 0.4);
+            box-shadow: 0 0 30px rgba(212, 162, 78, 0.08);
             transform: translateY(-3px);
         }
 
@@ -199,7 +216,7 @@
             align-items: center;
             gap: 1.5rem;
             padding: 1.5rem;
-            border-bottom: 1px solid rgba(0, 212, 255, 0.1);
+            border-bottom: 1px solid rgba(212, 162, 78, 0.1);
         }
 
         .project-icon {
@@ -218,7 +235,7 @@
         }
 
         .project-title {
-            color: white;
+            color: var(--ivory);
             font-size: 1.25rem;
             margin-bottom: 0.25rem;
         }
@@ -237,39 +254,39 @@
         }
 
         .status-production {
-            background: rgba(34, 197, 94, 0.15);
-            color: var(--green-500);
-            border: 1px solid rgba(34, 197, 94, 0.3);
+            background: rgba(212, 162, 78, 0.15);
+            color: var(--gold);
+            border: 1px solid rgba(212, 162, 78, 0.3);
         }
 
         .status-nda {
-            background: rgba(239, 68, 68, 0.15);
-            color: #ef4444;
-            border: 1px solid rgba(239, 68, 68, 0.3);
+            background: rgba(205, 106, 106, 0.15);
+            color: #cd6a6a;
+            border: 1px solid rgba(205, 106, 106, 0.3);
         }
 
         .status-research {
-            background: rgba(168, 85, 247, 0.15);
-            color: var(--purple-500);
-            border: 1px solid rgba(168, 85, 247, 0.3);
+            background: rgba(201, 138, 148, 0.15);
+            color: var(--rose);
+            border: 1px solid rgba(201, 138, 148, 0.3);
         }
 
         .status-personal {
-            background: rgba(0, 212, 255, 0.15);
-            color: var(--neon-blue);
-            border: 1px solid rgba(0, 212, 255, 0.3);
+            background: rgba(201, 138, 148, 0.15);
+            color: var(--rose);
+            border: 1px solid rgba(201, 138, 148, 0.3);
         }
 
         .status-startup {
-            background: rgba(234, 179, 8, 0.15);
-            color: #eab308;
-            border: 1px solid rgba(234, 179, 8, 0.3);
+            background: rgba(212, 162, 78, 0.15);
+            color: #d4a24e;
+            border: 1px solid rgba(212, 162, 78, 0.3);
         }
 
         .status-live {
-            background: rgba(34, 197, 94, 0.15);
-            color: var(--green-500);
-            border: 1px solid rgba(34, 197, 94, 0.3);
+            background: rgba(212, 162, 78, 0.15);
+            color: var(--gold);
+            border: 1px solid rgba(212, 162, 78, 0.3);
         }
 
         .project-body {
@@ -313,9 +330,9 @@
             top: 0.5rem;
             width: 6px;
             height: 6px;
-            background: var(--neon-blue);
+            background: var(--gold);
             border-radius: 50%;
-            box-shadow: 0 0 6px rgba(0, 212, 255, 0.5);
+            box-shadow: 0 0 6px rgba(212, 162, 78, 0.5);
         }
 
         .project-tags {
@@ -326,12 +343,12 @@
         }
 
         .project-tag {
-            background: rgba(0, 212, 255, 0.08);
-            color: var(--neon-blue);
+            background: rgba(212, 162, 78, 0.08);
+            color: var(--gold);
             padding: 0.25rem 0.75rem;
             border-radius: 9999px;
             font-size: 0.75rem;
-            border: 1px solid rgba(0, 212, 255, 0.15);
+            border: 1px solid rgba(212, 162, 78, 0.15);
         }
 
         .project-links {
@@ -341,7 +358,7 @@
         }
 
         .project-link {
-            color: var(--neon-blue);
+            color: var(--gold);
             text-decoration: none;
             font-size: 0.85rem;
             display: inline-flex;
@@ -351,8 +368,8 @@
         }
 
         .project-link:hover {
-            color: var(--neon-blue-bright);
-            text-shadow: 0 0 8px rgba(0, 212, 255, 0.5);
+            color: var(--gold-bright);
+            text-shadow: 0 0 8px rgba(212, 162, 78, 0.5);
         }
 
         .project-link svg {
@@ -371,7 +388,7 @@
             text-align: center;
             padding: 2rem;
             color: var(--gray-500);
-            border-top: 1px solid rgba(0, 212, 255, 0.15);
+            border-top: 1px solid rgba(212, 162, 78, 0.15);
             margin-top: 2rem;
         }
 
@@ -399,7 +416,7 @@
                 top: 4rem;
                 left: 0;
                 right: 0;
-                background: rgba(0, 0, 0, 0.95);
+                background: rgba(20, 13, 15, 0.96);
                 backdrop-filter: blur(16px);
                 flex-direction: column;
                 padding: 2rem;
@@ -407,7 +424,7 @@
                 transform: translateY(-100%);
                 opacity: 0;
                 transition: all 0.3s ease;
-                border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+                border-bottom: 1px solid rgba(212, 162, 78, 0.2);
                 z-index: 40;
             }
 
@@ -437,13 +454,23 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-delay: 0s !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
     </style>
 </head>
 <body>
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <a href="index.html" class="logo"><span style="color: var(--neon-blue);">novica.trif</span><span style="color: white;">kovic</span></a>
+            <a href="index.html" class="logo"><span style="color: var(--gold);">novica.trif</span><span style="color: var(--ivory);">kovic</span></a>
             <button class="menu-toggle" id="menuToggle">&#9776;</button>
             <ul class="nav-links" id="navLinks">
                 <li><a href="index.html">Home</a></li>
@@ -470,10 +497,10 @@
 
             <!-- Sila -->
             <div class="project-card fade-in">
-                <div class="project-header" style="background: linear-gradient(135deg, rgba(234, 179, 8, 0.1), rgba(0, 212, 255, 0.05));">
-                    <div class="project-icon" style="background: rgba(234, 179, 8, 0.1);">&#10024;</div>
+                <div class="project-header" style="background: linear-gradient(135deg, rgba(212, 162, 78, 0.1), rgba(212, 162, 78, 0.05));">
+                    <div class="project-icon" style="background: rgba(212, 162, 78, 0.1);">&#10024;</div>
                     <div class="project-header-info">
-                        <h3 class="project-title">Sila &mdash; Co-Founder &amp; CTO</h3>
+                        <h3 class="project-title">Sila - Co-Founder &amp; CTO</h3>
                         <p class="project-meta">AI for Luxury Retail | Face-Recognition VIP Experience</p>
                     </div>
                     <span class="project-status status-startup">CTO</span>
@@ -482,7 +509,7 @@
                     <p class="project-description">
                         B2B SaaS bringing a face-recognition-driven VIP experience to luxury retail. As co-founder and CTO I own the
                         backend and the entire face-recognition pipeline. The MVP recognizes a VIP customer at the door in
-                        <strong>under 200 ms</strong> and instantly pushes their full profile to a store associate's phone &mdash;
+                        <strong>under 200 ms</strong> and instantly pushes their full profile to a store associate's phone,
                         built on a consent-first, GDPR-compliant architecture that stores only mathematical embeddings, never images.
                     </p>
                     <div class="project-features">
@@ -512,8 +539,8 @@
                             </svg>
                             bysila.ai
                         </a>
-                        <span class="project-link disabled" style="color: #eab308;">
-                            &#127942; POPRI International &mdash; 1st place
+                        <span class="project-link disabled" style="color: #d4a24e;">
+                            &#127942; POPRI International - 1st place
                         </span>
                     </div>
                 </div>
@@ -521,8 +548,8 @@
 
             <!-- Photoristic -->
             <div class="project-card fade-in">
-                <div class="project-header" style="background: linear-gradient(135deg, rgba(168, 85, 247, 0.1), rgba(236, 72, 153, 0.05));">
-                    <div class="project-icon" style="background: rgba(168, 85, 247, 0.1);">&#128247;</div>
+                <div class="project-header" style="background: linear-gradient(135deg, rgba(201, 138, 148, 0.1), rgba(114, 47, 55, 0.05));">
+                    <div class="project-icon" style="background: rgba(201, 138, 148, 0.1);">&#128247;</div>
                     <div class="project-header-info">
                         <h3 class="project-title">Photoristic</h3>
                         <p class="project-meta">Real-Time AI Event &amp; Wedding Photography</p>
@@ -534,7 +561,7 @@
                         Face-recognition software for weddings and large events: a guest scans a QR code, takes a selfie, and every
                         photo they appear in is delivered to their private gallery in real time while the event is still running, with
                         AI auto-enhancing image quality. Like Sila, it is embedding-only (stores vectors, not faces) for full GDPR
-                        compliance &mdash; the differentiator versus PhotoDay and Waldo Photos. Recognized at the Science Technology
+                        compliance, the differentiator versus PhotoDay and Waldo Photos. Recognized at the Science Technology
                         Park Belgrade innovation competition.
                     </p>
                     <div class="project-tags">
@@ -545,8 +572,8 @@
                         <span class="project-tag">Real-Time</span>
                     </div>
                     <div class="project-links">
-                        <span class="project-link disabled" style="color: var(--purple-500);">
-                            &#127942; Innovation Competition (STP Belgrade) &mdash; 8th place, 2025
+                        <span class="project-link disabled" style="color: var(--rose);">
+                            &#127942; Innovation Competition (STP Belgrade) - 8th place, 2025
                         </span>
                     </div>
                 </div>
@@ -559,8 +586,8 @@
 
             <!-- IFMIS -->
             <div class="project-card fade-in">
-                <div class="project-header" style="background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(0, 212, 255, 0.05));">
-                    <div class="project-icon" style="background: rgba(34, 197, 94, 0.1);">&#127963;</div>
+                <div class="project-header" style="background: linear-gradient(135deg, rgba(212, 162, 78, 0.1), rgba(212, 162, 78, 0.05));">
+                    <div class="project-icon" style="background: rgba(212, 162, 78, 0.1);">&#127963;</div>
                     <div class="project-header-info">
                         <h3 class="project-title">IFMIS - Integrated Financial Management System</h3>
                         <p class="project-meta">Ministry of Finance | Enterprise Budget System</p>
@@ -572,8 +599,8 @@
                         Enterprise-grade budget planning and execution system for the Ministry of Finance, built with Saga / Yotta.
                         Worked as part of a large team following Agile methodology with sprint-based development, contributing across the
                         full lifecycle: backend architecture, database design, automated testing, containerization, and deployment.
-                        Also delivered sibling enterprise modules on the same stack and standards &mdash; asset inventory, warehouse,
-                        and vehicle-fleet systems &mdash; and helped modernize the company's internal Java training to Java 21 + Spring Boot 4.
+                        Also delivered sibling enterprise modules on the same stack and standards (asset inventory, warehouse,
+                        and vehicle-fleet systems) and helped modernize the company's internal Java training to Java 21 + Spring Boot 4.
                     </p>
                     <div class="project-features">
                         <h4>Key Contributions</h4>
@@ -601,8 +628,8 @@
 
             <!-- CV Generator -->
             <div class="project-card fade-in">
-                <div class="project-header" style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(168, 85, 247, 0.05));">
-                    <div class="project-icon" style="background: rgba(59, 130, 246, 0.1);">&#128196;</div>
+                <div class="project-header" style="background: linear-gradient(135deg, rgba(201, 138, 148, 0.1), rgba(201, 138, 148, 0.05));">
+                    <div class="project-icon" style="background: rgba(201, 138, 148, 0.1);">&#128196;</div>
                     <div class="project-header-info">
                         <h3 class="project-title">CV Generator</h3>
                         <p class="project-meta">Xenon Seven | AI-Powered Resume Generation Platform</p>
@@ -648,8 +675,8 @@
 
             <!-- Candidate Management Platform -->
             <div class="project-card fade-in">
-                <div class="project-header" style="background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(168, 85, 247, 0.05));">
-                    <div class="project-icon" style="background: rgba(0, 212, 255, 0.1);">&#129302;</div>
+                <div class="project-header" style="background: linear-gradient(135deg, rgba(212, 162, 78, 0.1), rgba(201, 138, 148, 0.05));">
+                    <div class="project-icon" style="background: rgba(212, 162, 78, 0.1);">&#129302;</div>
                     <div class="project-header-info">
                         <h3 class="project-title">Candidate Management Platform</h3>
                         <p class="project-meta">Gramian Consultancy | Recruiting-Tech, Production</p>
@@ -690,7 +717,7 @@
                             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
                             </svg>
-                            Private &mdash; client platform
+                            Private - client platform
                         </span>
                     </div>
                 </div>
@@ -698,8 +725,8 @@
 
             <!-- DTO Generator -->
             <div class="project-card fade-in">
-                <div class="project-header" style="background: linear-gradient(135deg, rgba(249, 115, 22, 0.1), rgba(234, 179, 8, 0.05));">
-                    <div class="project-icon" style="background: rgba(249, 115, 22, 0.1);">&#9881;</div>
+                <div class="project-header" style="background: linear-gradient(135deg, rgba(114, 47, 55, 0.1), rgba(212, 162, 78, 0.05));">
+                    <div class="project-icon" style="background: rgba(114, 47, 55, 0.1);">&#9881;</div>
                     <div class="project-header-info">
                         <h3 class="project-title">DTO Generator</h3>
                         <p class="project-meta">GiveSense | Internal CLI Tool, Java Reflection</p>
@@ -740,10 +767,10 @@
 
             <!-- English Learning Chatbot -->
             <div class="project-card fade-in">
-                <div class="project-header" style="background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(59, 130, 246, 0.05));">
-                    <div class="project-icon" style="background: rgba(0, 212, 255, 0.1);">&#128172;</div>
+                <div class="project-header" style="background: linear-gradient(135deg, rgba(212, 162, 78, 0.1), rgba(201, 138, 148, 0.05));">
+                    <div class="project-icon" style="background: rgba(212, 162, 78, 0.1);">&#128172;</div>
                     <div class="project-header-info">
-                        <h3 class="project-title">Bright English &mdash; Quiz Engine</h3>
+                        <h3 class="project-title">Bright English - Quiz Engine</h3>
                         <p class="project-meta">Conversational AI Chatbot for an EdTech SaaS</p>
                     </div>
                     <span class="project-status status-personal">Client Work</span>
@@ -779,8 +806,8 @@
 
             <!-- trif.rs -->
             <div class="project-card fade-in">
-                <div class="project-header" style="background: linear-gradient(135deg, rgba(249, 115, 22, 0.1), rgba(234, 179, 8, 0.05));">
-                    <div class="project-icon" style="background: rgba(249, 115, 22, 0.1);">&#128187;</div>
+                <div class="project-header" style="background: linear-gradient(135deg, rgba(114, 47, 55, 0.1), rgba(212, 162, 78, 0.05));">
+                    <div class="project-icon" style="background: rgba(114, 47, 55, 0.1);">&#128187;</div>
                     <div class="project-header-info">
                         <h3 class="project-title">trif.rs</h3>
                         <p class="project-meta">Personal Infrastructure | Self-Managed VM</p>
@@ -817,8 +844,8 @@
 
             <!-- Panorama Beska -->
             <div class="project-card fade-in">
-                <div class="project-header" style="background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(59, 130, 246, 0.05));">
-                    <div class="project-icon" style="background: rgba(0, 212, 255, 0.1);">&#127969;</div>
+                <div class="project-header" style="background: linear-gradient(135deg, rgba(212, 162, 78, 0.1), rgba(201, 138, 148, 0.05));">
+                    <div class="project-icon" style="background: rgba(212, 162, 78, 0.1);">&#127969;</div>
                     <div class="project-header-info">
                         <h3 class="project-title">Panorama Beska</h3>
                         <p class="project-meta">Vacation Rental Website</p>
@@ -851,8 +878,8 @@
 
             <!-- GFS System -->
             <div class="project-card fade-in">
-                <div class="project-header" style="background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(0, 212, 255, 0.05));">
-                    <div class="project-icon" style="background: rgba(34, 197, 94, 0.1);">&#127891;</div>
+                <div class="project-header" style="background: linear-gradient(135deg, rgba(212, 162, 78, 0.1), rgba(212, 162, 78, 0.05));">
+                    <div class="project-icon" style="background: rgba(212, 162, 78, 0.1);">&#127891;</div>
                     <div class="project-header-info">
                         <h3 class="project-title">GFS System</h3>
                         <p class="project-meta">Teaching Assistant Management System</p>
@@ -883,8 +910,8 @@
 
             <!-- GitGud -->
             <div class="project-card fade-in">
-                <div class="project-header" style="background: linear-gradient(135deg, rgba(168, 85, 247, 0.1), rgba(0, 212, 255, 0.05));">
-                    <div class="project-icon" style="background: rgba(168, 85, 247, 0.1);">&#127918;</div>
+                <div class="project-header" style="background: linear-gradient(135deg, rgba(201, 138, 148, 0.1), rgba(212, 162, 78, 0.05));">
+                    <div class="project-icon" style="background: rgba(201, 138, 148, 0.1);">&#127918;</div>
                     <div class="project-header-info">
                         <h3 class="project-title">GitGud</h3>
                         <p class="project-meta">Cross-Platform Desktop Git Client (Tauri)</p>
@@ -894,7 +921,7 @@
                 <div class="project-body">
                     <p class="project-description">
                         A standalone desktop Git GUI built with Tauri (Rust + web frontend) to replace the VSCode Git panel and the
-                        terminal &mdash; including a workflow for committing and pushing from a phone. It ships with full release
+                        terminal, including a workflow for committing and pushing from a phone. It ships with full release
                         engineering: a GitHub Actions build matrix for Windows and Linux, automatic version patching, GitHub Releases
                         with <code>latest.json</code> generation, SCP deploy behind Nginx, and one-line installers with SHA256 verification.
                     </p>
@@ -925,8 +952,8 @@
 
             <!-- eSign Lightweight -->
             <div class="project-card fade-in">
-                <div class="project-header" style="background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(0, 212, 255, 0.05));">
-                    <div class="project-icon" style="background: rgba(34, 197, 94, 0.1);">&#9997;</div>
+                <div class="project-header" style="background: linear-gradient(135deg, rgba(212, 162, 78, 0.1), rgba(212, 162, 78, 0.05));">
+                    <div class="project-icon" style="background: rgba(212, 162, 78, 0.1);">&#9997;</div>
                     <div class="project-header-info">
                         <h3 class="project-title">eSign Lightweight</h3>
                         <p class="project-meta">PDF E-Signature Web App</p>
@@ -952,17 +979,17 @@
 
             <!-- 7jun -->
             <div class="project-card fade-in">
-                <div class="project-header" style="background: linear-gradient(135deg, rgba(236, 72, 153, 0.1), rgba(249, 115, 22, 0.05));">
-                    <div class="project-icon" style="background: rgba(236, 72, 153, 0.1);">&#127881;</div>
+                <div class="project-header" style="background: linear-gradient(135deg, rgba(114, 47, 55, 0.1), rgba(114, 47, 55, 0.05));">
+                    <div class="project-icon" style="background: rgba(114, 47, 55, 0.1);">&#127881;</div>
                     <div class="project-header-info">
-                        <h3 class="project-title">7jun &mdash; Party Software</h3>
+                        <h3 class="project-title">7jun - Party Software</h3>
                         <p class="project-meta">Phone-Friendly Event Apps Monorepo</p>
                     </div>
                     <span class="project-status status-personal">Personal</span>
                 </div>
                 <div class="project-body">
                     <p class="project-description">
-                        A collection of small, independent, phone-friendly web apps for organizing an event &mdash; a DJ song-wishlist
+                        A collection of small, independent, phone-friendly web apps for organizing an event: a DJ song-wishlist
                         tool with admin curation and one-click audio download, and a guest survey (drinks, food, transport/carpool, song
                         wishes) with an admin purchase- and carpool-planning dashboard. Each app is deployed as its own process on a
                         subdomain behind Nginx, with systemd units and per-app deploy scripts.
@@ -980,8 +1007,8 @@
 
             <!-- GeoManager / GeoReader -->
             <div class="project-card fade-in">
-                <div class="project-header" style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(34, 197, 94, 0.05));">
-                    <div class="project-icon" style="background: rgba(59, 130, 246, 0.1);">&#128176;</div>
+                <div class="project-header" style="background: linear-gradient(135deg, rgba(201, 138, 148, 0.1), rgba(212, 162, 78, 0.05));">
+                    <div class="project-icon" style="background: rgba(201, 138, 148, 0.1);">&#128176;</div>
                     <div class="project-header-info">
                         <h3 class="project-title">GeoManager &amp; GeoReader</h3>
                         <p class="project-meta">Geoput d.o.o. | Financial / Transaction Software</p>
@@ -991,7 +1018,7 @@
                 <div class="project-body">
                     <p class="project-description">
                         Solo-developed financial software for a construction company. GeoManager (Spring Boot + Angular) manages financial
-                        transactions, reads XML files, and exports reports to Excel via Apache POI &mdash; 1000+ commits to beta/production.
+                        transactions, reads XML files, and exports reports to Excel via Apache POI, with 1000+ commits to beta/production.
                         Its companion GeoReader reads bank statements, handles contracts and a cashbook, generates browser-based reports for
                         non-technical staff, and ships as a runnable JAR with a local server and an in-app bug-reporting flow.
                     </p>
@@ -1014,8 +1041,8 @@
 
             <!-- Cloud Provider Benchmark -->
             <div class="project-card fade-in">
-                <div class="project-header" style="background: linear-gradient(135deg, rgba(168, 85, 247, 0.1), rgba(0, 212, 255, 0.05));">
-                    <div class="project-icon" style="background: rgba(168, 85, 247, 0.1);">&#9729;</div>
+                <div class="project-header" style="background: linear-gradient(135deg, rgba(201, 138, 148, 0.1), rgba(212, 162, 78, 0.05));">
+                    <div class="project-icon" style="background: rgba(201, 138, 148, 0.1);">&#9729;</div>
                     <div class="project-header-info">
                         <h3 class="project-title">Cloud Provider Benchmark</h3>
                         <p class="project-meta">PhD Research | Multi-Cloud IaaS / CaaS / FaaS Study</p>
@@ -1025,7 +1052,7 @@
                 <div class="project-body">
                     <p class="project-description">
                         An empirical, statistically-defensible comparison of AWS, Azure, Google Cloud, and Hetzner across three
-                        architectural layers &mdash; IaaS, CaaS, and FaaS &mdash; using one identical FastAPI application deployed to ten
+                        architectural layers (IaaS, CaaS, and FaaS) using one identical FastAPI application deployed to ten
                         targets. The platform underpins an in-progress PhD paper: a fully automated 14-day measurement campaign on a
                         neutral test client, analyzed with non-parametric statistics. It even caught a critical confound before launch
                         (the storage benchmark was timing SDK client setup, not storage) and cut p95 latency by up to 156x.
@@ -1062,8 +1089,8 @@
 
             <!-- Microservice Framework Analysis -->
             <div class="project-card fade-in">
-                <div class="project-header" style="background: linear-gradient(135deg, rgba(168, 85, 247, 0.1), rgba(236, 72, 153, 0.05));">
-                    <div class="project-icon" style="background: rgba(168, 85, 247, 0.1);">&#128202;</div>
+                <div class="project-header" style="background: linear-gradient(135deg, rgba(201, 138, 148, 0.1), rgba(114, 47, 55, 0.05));">
+                    <div class="project-icon" style="background: rgba(201, 138, 148, 0.1);">&#128202;</div>
                     <div class="project-header-info">
                         <h3 class="project-title">Microservice Framework Comparative Analysis</h3>
                         <p class="project-meta">Master's Thesis Research</p>
@@ -1125,10 +1152,10 @@
 
             <!-- Geosoft -->
             <div class="project-card fade-in">
-                <div class="project-header" style="background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(168, 85, 247, 0.05));">
-                    <div class="project-icon" style="background: rgba(34, 197, 94, 0.1);">&#128208;</div>
+                <div class="project-header" style="background: linear-gradient(135deg, rgba(212, 162, 78, 0.1), rgba(201, 138, 148, 0.05));">
+                    <div class="project-icon" style="background: rgba(212, 162, 78, 0.1);">&#128208;</div>
                     <div class="project-header-info">
-                        <h3 class="project-title">Geosoft &mdash; Geodetic Adjustment</h3>
+                        <h3 class="project-title">Geosoft - Geodetic Adjustment</h3>
                         <p class="project-meta">Patented Software | 1D/2D Least-Squares</p>
                     </div>
                     <span class="project-status status-production">Patented</span>
@@ -1136,7 +1163,7 @@
                 <div class="project-body">
                     <p class="project-description">
                         Patented software for Geosoft d.o.o., developed with professors from the Faculty of Civil Engineering in Subotica,
-                        that performs 1D and 2D least-squares adjustment of survey measurements &mdash; replacing legacy Excel + VBA
+                        that performs 1D and 2D least-squares adjustment of survey measurements, replacing legacy Excel + VBA
                         templates. I reverse-engineered the original VBA algorithm, wrote a full specification, then implemented a Python
                         (NumPy) core behind FastAPI, proving correctness with golden-file tests against real solved projects
                         (17/17 passing, including an 85-point / 301-measurement dataset, to 6-decimal tolerance).
@@ -1154,8 +1181,8 @@
 
             <!-- GeosoftAgenti -->
             <div class="project-card fade-in">
-                <div class="project-header" style="background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(234, 179, 8, 0.05));">
-                    <div class="project-icon" style="background: rgba(0, 212, 255, 0.1);">&#128196;</div>
+                <div class="project-header" style="background: linear-gradient(135deg, rgba(212, 162, 78, 0.1), rgba(212, 162, 78, 0.05));">
+                    <div class="project-icon" style="background: rgba(212, 162, 78, 0.1);">&#128196;</div>
                     <div class="project-header-info">
                         <h3 class="project-title">GeosoftAgenti</h3>
                         <p class="project-meta">Dual-Extraction OCR Pipeline (Handwritten Cyrillic &rarr; CSV)</p>
@@ -1164,7 +1191,7 @@
                 </div>
                 <div class="project-body">
                     <p class="project-description">
-                        A pipeline that converts scanned cadastral/geodetic PDFs &mdash; largely handwritten Serbian Cyrillic &mdash; into
+                        A pipeline that converts scanned cadastral/geodetic PDFs (largely handwritten Serbian Cyrillic) into
                         clean CSV using two independent extractors (Claude and Google Gemini) from different model families to avoid
                         correlated errors. The results are compared cell-by-cell; disagreements are routed to a human-review UI, and
                         document-internal checksums (group sums, JMBG control digit) act as model-independent validators.
@@ -1182,8 +1209,8 @@
 
             <!-- SAGA Internship -->
             <div class="project-card fade-in">
-                <div class="project-header" style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(0, 212, 255, 0.05));">
-                    <div class="project-icon" style="background: rgba(59, 130, 246, 0.1);">&#128218;</div>
+                <div class="project-header" style="background: linear-gradient(135deg, rgba(201, 138, 148, 0.1), rgba(212, 162, 78, 0.05));">
+                    <div class="project-icon" style="background: rgba(201, 138, 148, 0.1);">&#128218;</div>
                     <div class="project-header-info">
                         <h3 class="project-title">SAGA Spring Boot Internship</h3>
                         <p class="project-meta">Professional Training Program</p>

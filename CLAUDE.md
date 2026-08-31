@@ -21,11 +21,16 @@ dist/
 └── assets/
     ├── favicon.ico
     └── img/
-        ├── pfp.png, pfpmini.png   # profile photos (currently unused, kept for future use)
+        ├── professional.jpg           # original professional portrait (source of the site palette)
+        ├── wide-professional.jpg      # Photoshop-extended near-square variant with dark space on the left
+        ├── wide-professional-web.jpg  # 1400px optimized copy used in the index hero (regenerate from wide-professional.jpg if replaced)
+        ├── pfp.png, pfpmini.png   # older profile photos (currently unused, kept for future use)
         └── education/             # degree badges (currently unused, kept for future use)
 ```
 
-- Shared design system across all pages: dark background with a "neon-blue" (`--neon-blue: #00d4ff`) accent, defined as CSS custom properties in each page's `:root`.
+- Shared "wine & gold" design system across all pages, derived from the professional portrait: warm near-black background (`--ink: #171012`), bordeaux (`--bordeaux: #722f37`) for primary fills/buttons/left-border accents, dark gold (`--gold: #d4a24e`) as the pop accent (icons, links, logo, nav underline), rose (`--rose: #c98a94`) as a secondary accent, ivory (`--ivory: #f4ece1`) for headings. All defined as CSS custom properties in each page's `:root`.
+- Typography: Fraunces (Google Fonts, serif) for display/headings and the italic logo; Inter for body text. Font `<link>`s are duplicated in each page's `<head>`.
+- Index hero is a split-screen: text left, full-height portrait photo right (not sticky — scrolls with the page); on mobile the photo stacks above the text.
 - Scroll-reveal animations via `IntersectionObserver`; responsive nav with a mobile hamburger toggle. These scripts are duplicated inline in each page.
 - The home page features a curated subset (skills/projects) with "See All" buttons linking to the full `skills.html` / `projects.html` pages.
 
