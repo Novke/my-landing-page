@@ -237,6 +237,32 @@
             display: block;
         }
 
+        /* Wider chip holding three framework logos side by side */
+        .project-icon-trio {
+            width: auto;
+            gap: 0.55rem;
+            padding: 0 0.85rem;
+        }
+
+        .project-icon-trio img {
+            max-width: none;
+            max-height: none;
+            width: auto;
+            opacity: 0.92;
+        }
+
+        .project-icon-trio .logo-spring {
+            height: 24px;
+        }
+
+        .project-icon-trio .logo-micronaut {
+            height: 30px;
+        }
+
+        .project-icon-trio .logo-quarkus {
+            height: 23px;
+        }
+
         .project-header-info {
             flex-grow: 1;
         }
@@ -1097,7 +1123,11 @@
             <!-- Microservice Framework Analysis -->
             <div class="project-card fade-in">
                 <div class="project-header" style="background: linear-gradient(135deg, rgba(201, 138, 148, 0.1), rgba(114, 47, 55, 0.05));">
-                    <div class="project-icon" style="background: rgba(201, 138, 148, 0.1);">&#128202;</div>
+                    <div class="project-icon project-icon-trio" style="background: rgba(201, 138, 148, 0.1);">
+                        <img class="logo-spring" src="assets/img/spring-mono-ivory.svg" alt="Spring logo">
+                        <img class="logo-micronaut" src="assets/img/micronaut-mono-ivory.svg" alt="Micronaut logo">
+                        <img class="logo-quarkus" src="assets/img/quarkus-mono-ivory.svg" alt="Quarkus logo">
+                    </div>
                     <div class="project-header-info">
                         <h3 class="project-title">Microservice Framework Comparative Analysis</h3>
                         <p class="project-meta">Master's Thesis Research</p>

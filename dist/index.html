@@ -677,6 +677,32 @@
             object-fit: contain;
         }
 
+        .project-logo-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.8rem;
+            padding: 0 1rem;
+        }
+
+        .project-logo-row img {
+            width: auto;
+            object-fit: contain;
+            opacity: 0.92;
+        }
+
+        .project-logo-row .logo-spring {
+            height: 54px;
+        }
+
+        .project-logo-row .logo-micronaut {
+            height: 64px;
+        }
+
+        .project-logo-row .logo-quarkus {
+            height: 50px;
+        }
+
         .project-content {
             padding: 1.5rem;
             display: flex;
@@ -1383,7 +1409,11 @@
 
             <div class="project-card reveal">
                 <div class="project-image" style="background: linear-gradient(135deg, rgba(114, 47, 55, 0.5), rgba(212, 162, 78, 0.12));">
-                    <span style="font-size: 4rem; opacity: 0.5;">📊</span>
+                    <div class="project-logo-row">
+                        <img class="logo-spring" src="assets/img/spring-mono-ivory.svg" alt="Spring logo">
+                        <img class="logo-micronaut" src="assets/img/micronaut-mono-ivory.svg" alt="Micronaut logo">
+                        <img class="logo-quarkus" src="assets/img/quarkus-mono-ivory.svg" alt="Quarkus logo">
+                    </div>
                 </div>
                 <div class="project-content">
                     <h3 class="project-title">Microservice Framework Comparative Analysis</h3>
