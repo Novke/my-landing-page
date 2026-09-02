@@ -1,0 +1,19 @@
+<svg width="190" height="190" viewBox="0 0 190 190" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <mask id="crownCutout">
+      <!-- White = visible part of the circle, black = punched through -->
+      <rect width="190" height="190" fill="white"/>
+      <!-- Crown silhouette (wave top + base bar) becomes a transparent hole. -->
+      <path d="M74.7917 119.167H116.208M65.9167 71.8335L74.7917 107.333H116.208L125.083 71.8335L107.333 92.5418L95.5001 71.8335L83.6667 92.5418L65.9167 71.8335Z" fill="black" stroke="black" stroke-width="5.33333" stroke-linecap="round" stroke-linejoin="round"/>
+    </mask>
+  </defs>
+
+  <!-- 4 corner L-shapes (square frame) -->
+  <path d="M0 65.6758H5.92842V5.93157H65.6424V0H0V65.6758Z" fill="#ffffff"/>
+  <path d="M5.92842 124.324H0V190H65.6424V184.068H5.92842V124.324Z" fill="#ffffff"/>
+  <path d="M124.358 0V5.93157H184.072V65.6758H190V0H124.358Z" fill="#ffffff"/>
+  <path d="M184.072 184.068H124.358V190H190V124.324H184.072V184.068Z" fill="#ffffff"/>
+
+  <!-- Pink circle with crown cut through -->
+  <path d="M95.0019 41C65.3442 41 41 65.348 41 94.9944C41 124.663 65.3442 149 95.0019 149C124.671 149 149 124.663 149 94.9944C148.996 65.348 124.671 41 95.0019 41Z" fill="#ffffff" mask="url(#crownCutout)"/>
+</svg>
