@@ -1,0 +1,24 @@
+[Unit]
+Description=Contact form endpoint for novica.trif.rs
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/node /srv/sites/novica/my-landing-page/server/contact-service.js
+EnvironmentFile=/etc/novica-contact.env
+Restart=always
+RestartSec=3
+
+DynamicUser=yes
+NoNewPrivileges=yes
+PrivateTmp=yes
+ProtectSystem=strict
+ProtectHome=yes
+ProtectKernelTunables=yes
+ProtectControlGroups=yes
+RestrictAddressFamilies=AF_INET AF_INET6
+MemoryMax=128M
+
+[Install]
+WantedBy=multi-user.target

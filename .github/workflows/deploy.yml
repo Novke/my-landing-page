@@ -26,4 +26,7 @@ jobs:
             cd /srv/sites/novica/my-landing-page
             git pull origin master
             systemctl reload nginx
+            if systemctl is-enabled --quiet novica-contact 2>/dev/null; then
+              systemctl restart novica-contact
+            fi
           EOF
