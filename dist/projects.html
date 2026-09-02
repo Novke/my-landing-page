@@ -257,6 +257,19 @@
             gap: 0.45rem;
         }
 
+        /* Wider chip for a single wordmark logo that would be illegible squared off */
+        .project-icon-wide {
+            width: auto;
+            padding: 0 0.7rem;
+        }
+
+        .project-icon-wide img {
+            max-width: none;
+            max-height: none;
+            width: auto;
+            height: 24px;
+        }
+
         .project-icon-trio .logo-spring {
             height: 24px;
         }
@@ -823,7 +836,7 @@
             <!-- English Learning Chatbot -->
             <div class="project-card fade-in">
                 <div class="project-header" style="background: linear-gradient(135deg, rgba(212, 162, 78, 0.1), rgba(201, 138, 148, 0.05));">
-                    <div class="project-icon" style="background: rgba(212, 162, 78, 0.1);">&#128172;</div>
+                    <div class="project-icon project-icon-wide" style="background: rgba(212, 162, 78, 0.1);"><img src="assets/img/bright-english-mono-ivory.svg" alt="Bright English logo"></div>
                     <div class="project-header-info">
                         <h3 class="project-title">Bright English - Quiz Engine</h3>
                         <p class="project-meta">Conversational AI Chatbot for an EdTech SaaS</p>
