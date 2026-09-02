@@ -703,6 +703,26 @@
             height: 50px;
         }
 
+        .project-logo-row.is-quad {
+            gap: 1.2rem;
+        }
+
+        .project-logo-row .logo-aws {
+            height: 34px;
+        }
+
+        .project-logo-row .logo-azure {
+            height: 48px;
+        }
+
+        .project-logo-row .logo-gcp {
+            height: 46px;
+        }
+
+        .project-logo-row .logo-hetzner {
+            height: 38px;
+        }
+
         .project-content {
             padding: 1.5rem;
             display: flex;
@@ -1489,7 +1509,12 @@
 
             <div class="project-card reveal">
                 <div class="project-image" style="background: linear-gradient(135deg, rgba(114, 47, 55, 0.42), rgba(212, 162, 78, 0.15));">
-                    <span style="font-size: 4rem; opacity: 0.5;">☁️</span>
+                    <div class="project-logo-row is-quad">
+                        <img class="logo-aws" src="assets/img/aws-mono-ivory.svg" alt="Amazon Web Services logo">
+                        <img class="logo-azure" src="assets/img/azure-mono-ivory.svg" alt="Microsoft Azure logo">
+                        <img class="logo-gcp" src="assets/img/google-cloud-mono-ivory.svg" alt="Google Cloud logo">
+                        <img class="logo-hetzner" src="assets/img/hetzner-mono-ivory.svg" alt="Hetzner logo">
+                    </div>
                 </div>
                 <div class="project-content">
                     <h3 class="project-title">Cloud Provider Benchmark</h3>

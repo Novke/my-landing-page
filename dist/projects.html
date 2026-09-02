@@ -237,18 +237,24 @@
             display: block;
         }
 
-        /* Wider chip holding three framework logos side by side */
-        .project-icon-trio {
+        /* Wider chip holding several logos side by side */
+        .project-icon-trio,
+        .project-icon-quad {
             width: auto;
             gap: 0.55rem;
             padding: 0 0.85rem;
         }
 
-        .project-icon-trio img {
+        .project-icon-trio img,
+        .project-icon-quad img {
             max-width: none;
             max-height: none;
             width: auto;
             opacity: 0.92;
+        }
+
+        .project-icon-quad {
+            gap: 0.45rem;
         }
 
         .project-icon-trio .logo-spring {
@@ -261,6 +267,22 @@
 
         .project-icon-trio .logo-quarkus {
             height: 23px;
+        }
+
+        .project-icon-quad .logo-aws {
+            height: 16px;
+        }
+
+        .project-icon-quad .logo-azure {
+            height: 22px;
+        }
+
+        .project-icon-quad .logo-gcp {
+            height: 21px;
+        }
+
+        .project-icon-quad .logo-hetzner {
+            height: 18px;
         }
 
         .project-header-info {
@@ -1075,7 +1097,12 @@
             <!-- Cloud Provider Benchmark -->
             <div class="project-card fade-in">
                 <div class="project-header" style="background: linear-gradient(135deg, rgba(201, 138, 148, 0.1), rgba(212, 162, 78, 0.05));">
-                    <div class="project-icon" style="background: rgba(201, 138, 148, 0.1);">&#9729;</div>
+                    <div class="project-icon project-icon-quad" style="background: rgba(201, 138, 148, 0.1);">
+                        <img class="logo-aws" src="assets/img/aws-mono-ivory.svg" alt="Amazon Web Services logo">
+                        <img class="logo-azure" src="assets/img/azure-mono-ivory.svg" alt="Microsoft Azure logo">
+                        <img class="logo-gcp" src="assets/img/google-cloud-mono-ivory.svg" alt="Google Cloud logo">
+                        <img class="logo-hetzner" src="assets/img/hetzner-mono-ivory.svg" alt="Hetzner logo">
+                    </div>
                     <div class="project-header-info">
                         <h3 class="project-title">Cloud Provider Benchmark</h3>
                         <p class="project-meta">PhD Research | Multi-Cloud IaaS / CaaS / FaaS Study</p>
