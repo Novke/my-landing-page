@@ -40,7 +40,7 @@ GitHub Actions (`.github/workflows/deploy.yml`) runs on push to `master`. It SSH
 
 ## Content source
 
-`Novica_Trifkovic_Master_Profile.md` (one directory up, outside this repo) is the authoritative dossier of all professional/project facts used to populate the site.
+`Novica_Trifkovic_Master_Profile.md` is the authoritative dossier of all professional/project facts used to populate the site. It lives only in the private repo `Novke/profil` (not on disk next to this repo): read it with `profil get`, change it only with `/add-experience` or `profil put`. Never copy its contents into this public repo beyond what the site itself shows.
 
 ## Code Style
 
